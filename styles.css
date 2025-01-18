@@ -1,4 +1,6 @@
 /* styles.css */
+
+
 .content-wrapper {
   max-width: 1200px;
   width: 100%;
@@ -8,12 +10,6 @@
   grid-template-columns: 1fr auto; /* Main content | Navigation */
   transition: transform 0.7s ease; /* Animate the transformation */
   gap: 4rem;
-}
-
-.direction-toggle {
-  position: fixed;
-  z-index: 1000;
-  cursor: pointer;
 }
 
 .content-wrapper.rtl {
@@ -48,7 +44,7 @@ body {
 
 .header-container {
   position: relative;
-  height: 200px; /* Adjust this to your desired height */
+  height: clamp(50px, 20vw - 100px, 200px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,11 +57,9 @@ body {
   top: 0;
   left: 0;
   width: 100%; /* Full viewport width */
-  height: 200px; /* Match the height of the container */
-
+  height: clamp(50px, 20vw - 100px, 200px);
   object-fit: cover;
   object-position: left;
-
   z-index: 1;
 }
 
@@ -82,7 +76,7 @@ h1 {
   font-weight: bolder;
   font-size: clamp(1.5rem, 8vw - 1rem, 6rem); /* Increased size values */
   margin: 0; /* Reset margin */
-  padding: clamp(1rem, 2vw, 2rem) clamp(1rem, 5vw + 3rem, 200px); /* Fluid padding that scales smoothly */
+  padding: clamp(1rem, 2vw, 2rem) clamp(1rem, 5vw + 3rem, 50px); /* Fluid padding that scales smoothly */
   text-align: left; /* Ensure left alignment */
   line-height: 1;
   width: 100%; /* Ensure full width */
@@ -101,19 +95,32 @@ h2 {
   position: relative;
   margin: 0; /* Reset margin */
 }
+
+/* .navbar-container{
+  position: fixed;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-right: auto;
+  width: 100%; 
+  padding-top: 2rem; 
+  z-index: 2;
+  max-width: 1200px;
+} */
+
+
 .navbar-container {
-  position: sticky; /* Move sticky back to container */
+  position: sticky; 
   align-self: start;
-  top: 0;
-  width: fit-content; /* Only take up needed space */
-  margin-left: auto; /* Push to right side */
-  z-index: 2; /* Lower z-index to allow overlap */
-  background: transparent; /* Allow content to show through */
-  padding-top: 2rem; /* Add some spacing from top */
+  top: clamp(50px, 20vw - 100px, 200px);
+  width: fit-content; 
+  margin-left: auto; 
+  background: transparent; 
+  padding-top: 2rem; 
 }
 
+
 .navbar {
-  background: white;
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -166,12 +173,12 @@ footer {
   bottom: 0; /* Stick to bottom */
   left: 0;
   width: 100%;
-  background-color: #f8f9fa;
+  background-color: #f3f3f3;
   z-index: 999; /* Keep above content but below navbar */
   padding: 0; /* Add some padding */
   transition: transform 0.3s ease;
   display: flex; /* Add flex to center social-nav */
-  justify-content: center; /* Center horizontally */
+  justify-content: center; /* Center horizontally */ 
 }
 
 footer.hidden {
@@ -213,6 +220,10 @@ footer.hidden {
   opacity: 0.8;
   transition: opacity 0.2s ease;
   border-radius: 50%; /* Round the corners */
+}
+
+.github-icon{
+  content: url('assets/github-mark.png');
 }
 
 .social-label {
@@ -276,64 +287,63 @@ footer.hidden {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #ffffff;
+  background: black;
   border-radius: 15px;
   transition: 0.4s;
   box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.6),
     2px 2px 6px rgba(0, 0, 0, 0.3);
-  display: flex;           /* Add flexbox */
-  align-items: center;     /* Center items vertically */
-  padding: 0 10px;        /* Add horizontal padding for letters */
+  display: grid;              /* Change to grid */
+  grid-template-columns: 1fr 1fr;  /* Two equal columns */
+  align-items: center;
+  justify-items: center;      /* Center items horizontally */
+  padding: 0;                /* Remove padding */
 }
 
 .switch-slider:before {
   position: absolute;
   content: "L";
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;            /* Change to grid */
+  place-items: center;      /* Center both horizontally and vertically */
   height: 24px;
   width: 24px;
   left: 3px;
   bottom: 3px;
-  background-color: #000;
+  background-color: white;
   border-radius: 50%;
   transition: 0.4s;
-  color: white;
+  color: black;
   font-weight: bold;
   font-size: 14px;
+  z-index: 2;              /* Increased z-index */
 }
 
 .switch-slider:after {
-  position: absolute;
   content: "R";
-  right: 10px;            /* Adjust right positioning */
-  top: 50%;              /* Center vertically */
-  transform: translateY(-50%);  /* Perfect vertical centering */
-  color: #000;
+  color: white;
   font-weight: bold;
   font-size: 14px;
-  height: 24px;          /* Match sliding circle height */
-  display: flex;         /* Use flexbox */
-  align-items: center;   /* Center letter vertically */
+  grid-column: 2;          /* Place in second column */
+  z-index: 1;              /* Ensure text is always visible */
+  position: relative;      /* Enable z-index */
 }
 
 .switch-input:checked + .switch-slider:before {
   transform: translateX(30px);
   content: "R";
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: white;
 }
 
 .switch-input:checked + .switch-slider:after {
   content: "L";
-  left: 10px;            /* Adjust left positioning */
-  right: auto;
-  color: white;
+  grid-column: 1;         /* Place in first column */
+  color: black;           /* Make text visible */
+  position: relative;     /* Enable z-index */
+  z-index: 1;            /* Keep text visible */
 }
 
 .switch-input:checked + .switch-slider {
-  background: #000;
+  background: white;
 }
 
 .switch-container:hover {
@@ -343,39 +353,31 @@ footer.hidden {
 
 /* Add theme switch specific styles */
 .theme-slider:before {
-    content: "" !important;  /* Remove L/R text */
-    background-color: #000;
+    content: "";
+    background-color: rgb(255, 255, 255);  /* Circle color when not toggled */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.2);  /* Optional: adds depth */
 }
 
-.theme-slider:after {
-    content: "" !important;  /* Remove L/R text */
+.theme-slider {
+    background-image: url('assets/night-icon-light.svg');
+    background-size: 16px;
+    background-repeat: no-repeat;
+    background-position: 80% center;
 }
 
+.switch-input:checked + .theme-slider {
+  background-image: url('assets/day-icon-dark.svg');
+  background-size: 16px;
+  background-repeat: no-repeat;
+  background-position: 20% center;
+}
+
+/* Remove old theme icon styles */
 .theme-icon {
-    position: absolute;
-    width: 14px;
-    height: 14px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.day-icon {
-    right: 8px;
-    opacity: 1;
-}
-
-.night-icon {
-    left: 8px;
-    opacity: 0;
-}
-
-/* Theme switch checked state */
-.switch-input:checked + .theme-slider .day-icon {
-    opacity: 0;
-}
-
-.switch-input:checked + .theme-slider .night-icon {
-    opacity: 1;
+    display: none;
 }
 
 .switch-group {
@@ -385,3 +387,59 @@ footer.hidden {
     margin: 1rem 0;
     margin-right: auto;
 }
+
+/* Direction switch specific styles */
+.direction-slider:before {
+    content: "L";
+}
+
+.direction-slider:after {
+    content: "R";
+}
+
+/* Theme switch specific styles */
+.theme-slider:before,
+.theme-slider:after {
+    content: "" !important;
+}
+
+/* Dark mode styles */
+.dark-mode {
+  transition: background-color 1s ease, color 1s ease; 
+  background-color: black;
+}
+
+body {
+  transition: background-color 1s ease, color 1s ease; 
+}
+
+footer {
+  transition: background-color 1s ease, color 1s ease; 
+}
+
+
+.dark-mode footer {
+  background-color: #0c0c0c;
+}
+
+.dark-mode .content-wrapper {
+  color: white;
+}
+
+.dark-mode .socials {
+  opacity: 0.8;
+}
+
+.dark-mode .social-item:hover .socials,
+.dark-mode .social-item:hover .social-label {
+    opacity: 1;
+}
+
+.dark-mode .social-label {
+    color: white;
+}
+
+body.dark-mode .github-icon {
+  content: url('assets/github-mark-white.png');
+}
+/* Add more dark mode styles as needed */

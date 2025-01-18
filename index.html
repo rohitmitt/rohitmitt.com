@@ -8,12 +8,23 @@
     />
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="styles.css" />
+    <link 
+    rel="preload" 
+    href="assets/header.png" 
+    as="image"
+    />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Rohit Mittal's personal website.</title>
   </head>
   <body>
-    <img class="headerIMG" src="assets/IMG_02643p.png" alt="California" />
+    <img 
+      class="headerIMG" 
+      src="assets/header.png" 
+      alt="California" 
+      fetchpriority="high"
+      loading="eager"
+    />
     <div class="header-container">
       <header>
         <h1 id="header-text"></h1>
@@ -72,34 +83,17 @@
               type="checkbox"
               class="switch-input"
               id="switchButton"
-              checked
             />
-            <span class="switch-slider"></span>
+            <span class="switch-slider direction-slider "></span>
           </label>
           <label class="switch-container">
-            <input
-              type="checkbox"
-              class="switch-input"
-              id="themeButton"
-              checked
-            />
-            <span class="switch-slider theme-slider">
-              <img
-                class="theme-icon day-icon"
-                src="assets/day-icon.svg"
-                alt="day mode"
-              />
-              <img
-                class="theme-icon night-icon"
-                src="assets/night-icon.svg"
-                alt="night mode"
-              />
-            </span>
+            <input type="checkbox" class="switch-input" id="themeButton" />
+            <span class="switch-slider theme-slider"></span>
           </label>
         </div>
 
         <a href="" target="_blank" class="social-item">
-          <img class="socials" src="assets/IMG_2693.png" alt="blog-mark" />
+          <img class="socials" src="assets/roheat.png" alt="blog-mark" />
           <span class="social-label">Blog</span>
         </a>
         <a
@@ -107,7 +101,7 @@
           target="_blank"
           class="social-item"
         >
-          <img class="socials" src="assets/github-mark.png" alt="github-mark" />
+          <img class="socials github-icon" alt="github-mark" />
           <span class="social-label">GitHub</span>
         </a>
         <a
@@ -115,7 +109,7 @@
           target="_blank"
           class="social-item"
         >
-          <img class="socials" src="assets/LI-In-Bug.png" alt="linkedin-mark" />
+          <img class="socials" src="assets/linkedin.png" alt="linkedin-mark" />
           <span class="social-label">LinkedIn</span>
         </a>
       </nav>
