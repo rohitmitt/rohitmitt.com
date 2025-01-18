@@ -1,0 +1,387 @@
+/* styles.css */
+.content-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 2vw + 0.5rem, 3rem);
+  display: grid;
+  grid-template-columns: 1fr auto; /* Main content | Navigation */
+  transition: transform 0.7s ease; /* Animate the transformation */
+  gap: 4rem;
+}
+
+.direction-toggle {
+  position: fixed;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.content-wrapper.rtl {
+  transform: scaleX(-1); /* Flip horizontally */
+}
+
+.content-wrapper > * {
+  transition: transform 0.7s ease; /* Ensure children transition with the container */
+  transform: scaleX(1); /* Default non-flipped state */
+}
+
+.content-wrapper.rtl > * {
+  transform: scaleX(-1); /* Flip children when the container has class 'rtl' */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
+  width: 100%; /* Take up 90% of available width */
+  margin: 0 auto; /* Center the container */
+  padding: clamp(
+    1rem,
+    2vw + 0.5rem,
+    3rem
+  ); /* Fluid padding that scales smoothly */
+  padding-top: 0; /* Remove top padding */
+  padding-bottom: 0; /* Space for footer - adjust based on footer height */
+  overflow-x: hidden;
+  position: relative; /* Create positioning context */
+}
+
+.header-container {
+  position: relative;
+  height: 200px; /* Adjust this to your desired height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  overflow: hidden; /* Clip content that overflows vertically */
+}
+
+.headerIMG {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Full viewport width */
+  height: 200px; /* Match the height of the container */
+
+  object-fit: cover;
+  object-position: left;
+
+  z-index: 1;
+}
+
+header {
+  display: flex;
+  margin: 0; /* Remove auto margin */
+  width: 100%;
+  justify-content: space-between; /* Space between h1 and nav */
+  z-index: 3;
+}
+
+h1 {
+  font-family: "Source Sans 3", system-ui, sans-serif; /* Better font fallbacks */
+  font-weight: bolder;
+  font-size: clamp(1.5rem, 8vw - 1rem, 6rem); /* Increased size values */
+  margin: 0; /* Reset margin */
+  padding: clamp(1rem, 2vw, 2rem) clamp(1rem, 5vw + 3rem, 200px); /* Fluid padding that scales smoothly */
+  text-align: left; /* Ensure left alignment */
+  line-height: 1;
+  width: 100%; /* Ensure full width */
+  user-select: none; /* Optional: prevents text selection */
+  position: relative;
+  z-index: 2;
+}
+
+h2 {
+  font-family: "Source Sans 3", system-ui, sans-serif; /* Better font fallbacks */
+  font-weight: bolder;
+  font-size: clamp(1.5rem, 6vw - 1rem, 3rem); /* Increased size values */
+  text-align: left; /* Ensure left alignment */
+  width: 100%; /* Ensure full width */
+  user-select: none; /* Optional: prevents text selection */
+  position: relative;
+  margin: 0; /* Reset margin */
+}
+.navbar-container {
+  position: sticky; /* Move sticky back to container */
+  align-self: start;
+  top: 0;
+  width: fit-content; /* Only take up needed space */
+  margin-left: auto; /* Push to right side */
+  z-index: 2; /* Lower z-index to allow overlap */
+  background: transparent; /* Allow content to show through */
+  padding-top: 2rem; /* Add some spacing from top */
+}
+
+.navbar {
+  background: white;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  padding: 0;
+  margin: 0;
+  user-select: none;
+  backdrop-filter: blur(10px); /* Optional: add blur effect behind nav */
+  border-radius: 8px; /* Optional: rounded corners */
+}
+
+.nav-header {
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-weight: bold;
+  font-size: clamp(1rem, 1.5vw, 2rem);
+  text-align: left;
+}
+
+.nav-item {
+  display: grid;
+  grid-template-columns: 80px 10px 1fr;
+  align-items: center;
+}
+
+.nav-item span {
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-weight: bold;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+  transition: transform 0.2s ease; /* Smoothly animate translateX over 0.5 seconds */
+  text-align: left;
+}
+
+.nav-item:hover span {
+  transform: translateX(1rem);
+  opacity: 1;
+}
+
+/* Main content grows to fill space between header and footer */
+main {
+  flex: 1; /* Take up all available space */
+  position: relative; /* Create stacking context */
+  z-index: 1; /* Place behind navbar */
+  margin-top: 0; /* Remove negative margin */
+}
+
+footer {
+  position: fixed; /* Change from static to fixed */
+  bottom: 0; /* Stick to bottom */
+  left: 0;
+  width: 100%;
+  background-color: #f8f9fa;
+  z-index: 999; /* Keep above content but below navbar */
+  padding: 0; /* Add some padding */
+  transition: transform 0.3s ease;
+  display: flex; /* Add flex to center social-nav */
+  justify-content: center; /* Center horizontally */
+}
+
+footer.hidden {
+  transform: translateY(100%);
+}
+
+.social-nav {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 0%;
+  padding-bottom: 0%;
+  gap: clamp(10px, 4vw - 1rem, 1rem); /* Gap between social-items 16px - 48px*/
+  padding: 0; /* Adjust padding to be more compact */
+  margin: 0;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0rem clamp(2rem, 3vw + 0.5rem, 2rem); /* Match content-wrapper padding */
+  margin: 0 auto; /* Center the nav */
+}
+
+.social-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.25rem; /* Add padding for larger click area */
+  text-decoration: none; /* Remove underline from link */
+  color: inherit; /* Keep text color */
+  cursor: pointer;
+  width: clamp(20px, 5vw + 15px, 64px); /* Fluid sizing for icons */
+  gap: 0rem; /* Remove gap between icon and label */
+}
+
+.socials {
+  /* width: clamp(50%, calc(70% + 1vw), 100%);   */
+  width: 75%;
+  aspect-ratio: 1; /* Keep square */
+  object-fit: contain;
+  object-position: center;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+  border-radius: 50%; /* Round the corners */
+}
+
+.social-label {
+  text-align: center; /* Ensures text itself is centered */
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-weight: bold;
+  font-size: clamp(0.6rem, 2vw, 0.875rem);
+}
+
+.socials,
+.social-label {
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+  cursor: inherit;
+}
+
+.social-item:hover .socials,
+.social-item:hover .social-label {
+  opacity: 1;
+}
+
+.socials,
+.social-label {
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+/* Single hover rule for the entire item */
+.social-item:hover .socials,
+.social-item:hover .social-label {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.dummy-content {
+  min-height: 200vh; /* 2x viewport height to force scroll */
+  padding-top: 2rem; /* Add some spacing from top */
+}
+
+.switch-container {
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-weight: bold;
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  opacity: 0.7;
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+.switch-input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ffffff;
+  border-radius: 15px;
+  transition: 0.4s;
+  box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.6),
+    2px 2px 6px rgba(0, 0, 0, 0.3);
+  display: flex;           /* Add flexbox */
+  align-items: center;     /* Center items vertically */
+  padding: 0 10px;        /* Add horizontal padding for letters */
+}
+
+.switch-slider:before {
+  position: absolute;
+  content: "L";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  width: 24px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #000;
+  border-radius: 50%;
+  transition: 0.4s;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.switch-slider:after {
+  position: absolute;
+  content: "R";
+  right: 10px;            /* Adjust right positioning */
+  top: 50%;              /* Center vertically */
+  transform: translateY(-50%);  /* Perfect vertical centering */
+  color: #000;
+  font-weight: bold;
+  font-size: 14px;
+  height: 24px;          /* Match sliding circle height */
+  display: flex;         /* Use flexbox */
+  align-items: center;   /* Center letter vertically */
+}
+
+.switch-input:checked + .switch-slider:before {
+  transform: translateX(30px);
+  content: "R";
+  background-color: white;
+  color: black;
+}
+
+.switch-input:checked + .switch-slider:after {
+  content: "L";
+  left: 10px;            /* Adjust left positioning */
+  right: auto;
+  color: white;
+}
+
+.switch-input:checked + .switch-slider {
+  background: #000;
+}
+
+.switch-container:hover {
+  transition: all 0.4s ease; 
+  opacity: 0.9;
+}
+
+/* Add theme switch specific styles */
+.theme-slider:before {
+    content: "" !important;  /* Remove L/R text */
+    background-color: #000;
+}
+
+.theme-slider:after {
+    content: "" !important;  /* Remove L/R text */
+}
+
+.theme-icon {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.day-icon {
+    right: 8px;
+    opacity: 1;
+}
+
+.night-icon {
+    left: 8px;
+    opacity: 0;
+}
+
+/* Theme switch checked state */
+.switch-input:checked + .theme-slider .day-icon {
+    opacity: 0;
+}
+
+.switch-input:checked + .theme-slider .night-icon {
+    opacity: 1;
+}
+
+.switch-group {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin: 1rem 0;
+    margin-right: auto;
+}
