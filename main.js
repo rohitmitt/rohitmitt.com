@@ -184,6 +184,38 @@ class DarkMode {
   }
 }
 
+class RandomTheme {
+  constructor() {
+    this.body = document.body;
+    this.randomThemeButton = document.getElementById("randomThemeButton");
+    this.themeClasses = ["theme-default", "theme-sage", "theme-terra"];
+    this.currentTheme = this.themeClasses[0]; // Store current theme
+    this.init();
+  }
+
+  init() {
+    this.randomThemeButton?.addEventListener("click", () =>
+      this.setRandomTheme()
+    );
+  }
+
+  setRandomTheme() {
+    // Remove current theme first
+    this.body.classList.remove(this.currentTheme);
+
+    // Create filtered list without current theme
+    const availableThemes = this.themeClasses.filter(
+      (theme) => theme !== this.currentTheme
+    );
+
+    const randomIndex = Math.floor(Math.random() * availableThemes.length);
+    const newTheme = availableThemes[randomIndex]; // Store the selected theme
+
+    this.body.classList.add(newTheme);
+    this.currentTheme = newTheme; // Update current theme
+  }
+}
+
 new DarkMode(); // Initialize DarkMode after DOM is loaded
 new PageDirection(); // Initialize PageDirection after DOM is loaded
 
@@ -203,4 +235,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const typewriter = new Typewriter(h1, baseText, words);
   typewriter.runSequence();
+  new RandomTheme();
 });

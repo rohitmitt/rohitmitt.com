@@ -3,7 +3,7 @@ footer {
   bottom: 0; /* Stick to bottom */
   left: 0;
   width: 100%;
-  background-color: #f3f3f3;
+  background-color: var(--light-secondary);
   z-index: 999; /* Keep above content but below navbar */
   padding: 0; /* Add some padding */
   display: flex; /* Add flex to center social-nav */
@@ -47,7 +47,7 @@ footer.hidden {
   aspect-ratio: 1; /* Keep square */
   object-fit: contain;
   object-position: center;
-  opacity: 0.8;
+  opacity: var(--opacity-light);
   transition: opacity 0.2s ease;
   border-radius: 50%; /* Round the corners */
 }
@@ -65,7 +65,7 @@ footer.hidden {
 
 .social-img,
 .social-label {
-  opacity: 0.8;
+  opacity: var(--opacity-light);
   transition: opacity 0.2s ease;
   cursor: inherit;
 }
@@ -77,7 +77,7 @@ footer.hidden {
 
 .social-img,
 .social-label {
-  opacity: 0.8;
+  opacity: var(--opacity-light);
   transition: opacity 0.2s ease;
 }
 

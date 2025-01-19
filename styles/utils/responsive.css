@@ -23,6 +23,22 @@
     --box-shadow-dark: 1px 1px 3px rgba(0, 0, 0, 0.3);
     --box-shadow-knob: 1px 1px 3px rgba(0, 0, 0, 0.2);
   }
+  .switch-group {
+    gap: 3rem;
+  }
+  .theme-slider:before {
+    background-image: url("../../assets/day-icon-dark.svg");
+    background-size: 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .switch-input:checked + .theme-slider:before {
+    background-image: url("../../assets/night-icon-light.svg");
+    background-size: 16px;
+    background-repeat: no-repeat;
+    background-color: var(--dark-primary);
+  }
 
   /* NAVBAR */
   .nav-item {

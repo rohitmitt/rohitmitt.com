@@ -1,22 +1,67 @@
-/* Layout */
 :root {
   /* Layout */
   --max-width: 1400px;
-
-  /* Transitions */
-  --transition-slow: 1s ease;
-  --transition-standard: 0.7s ease;
-  --transition-quick: 0.2s ease;
-
-  /* Spacing */
   --page-padding: 3rem;
-}
 
-/* Typography */
-:root {
+  /* Typography */
   --font-primary: "Source Sans 3", system-ui, sans-serif;
   --font-size-h1: clamp(1.5rem, 8vw - 1rem, 6rem);
   --font-size-h2: clamp(1.5rem, 6vw - 1rem, 3rem);
   --line-height-normal: 1.5;
   --line-height-heading: 1.2;
+
+  /* VISUAL */
+
+  --transition-standard: 0.7s ease;
+  --transition-quick: 0.2s ease;
+  --opacity-light: 0.8;
+}
+
+.theme-default {
+  --light-primary: white;
+  --dark-primary: black;
+  --light-secondary: #f3f3f3;
+  --dark-secondary: #0c0c0c;
+}
+
+.theme-sage {
+  --light-primary: #94a3b8;
+  --dark-primary: #0f172a;
+  --light-secondary: #cbd5e1;
+  --dark-secondary: #1e293b;
+}
+
+.theme-terra {
+  --light-primary: #d6d3d1;
+  --dark-primary: #292524;
+  --light-secondary: #e7e5e4;
+  --dark-secondary: #44403c;
+}
+
+.theme-ocean {
+  --light-primary: #93c5fd;
+  --dark-primary: #1e3a8a;
+  --light-secondary: #bfdbfe;
+  --dark-secondary: #1e40af;
+}
+
+.theme-forest {
+  --light-primary: #86efac;
+  --dark-primary: #064e3b;
+  --light-secondary: #bbf7d0;
+  --dark-secondary: #065f46;
+}
+
+.theme-sunset {
+  --light-primary: #fed7aa;
+  --dark-primary: #7c2d12;
+  --light-secondary: #fde68a;
+  --dark-secondary: #92400e;
+}
+
+.theme-rose {
+  --light-primary: #f9a8d4;
+  --dark-primary: #7c0a02;
+  --light-secondary: #fbcfe8;
+  --dark-secondary: #7c0a02;
 }

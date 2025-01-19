@@ -37,6 +37,7 @@ body {
   padding: 0; /* Remove padding since page-wrapper handles it */
   overflow-x: hidden;
   position: relative; /* Create positioning context */
+  background-color: vaR(--light-primary);
   transition: background-color var(--transition-standard),
     color var(--transition-standard);
 }

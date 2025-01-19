@@ -22,6 +22,7 @@ h1 {
   font-family: var(--font-primary);
   font-weight: bolder;
   font-size: var(--font-size-h1);
+  color: var(--dark-primary);
   line-height: var(--line-height-heading);
   margin: 0;
   padding: clamp(0rem, 10vw - 5rem, 5rem) 0;

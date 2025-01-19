@@ -5,7 +5,7 @@
 @import "base/typography.css";
 
 /* Layouts */
-@import "layouts/main.css";
+@import "layout/main.css";
 
 /* Components */
 @import "components/navbar.css";

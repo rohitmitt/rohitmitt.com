@@ -1,23 +1,19 @@
 :root {
   --switch-width: 60px;
   --switch-height: 30px;
-  --switch-transition: 0.4s;
-  --switch-font-family: "Source Sans 3", system-ui, sans-serif;
   --switch-border-radius: 15px;
   --switch-knob-size: 24px;
   --switch-knob-margin: 3px;
   --switch-text-size: 14px;
-  --color-white: rgb(255, 255, 255);
-  --color-black: rgb(0, 0, 0);
   --box-shadow-light: -2px -2px 6px rgba(255, 255, 255, 0.6);
   --box-shadow-dark: 2px 2px 6px rgba(0, 0, 0, 0.3);
   --box-shadow-knob: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .switch-container {
-  font-family: var(--switch-font-family);
+  font-family: var(--font-primary);
   font-weight: bold;
-  opacity: 0.7;
+  opacity: var(--opacity-light) + 1;
   position: relative;
   display: inline-block;
   width: var(--switch-width);
@@ -37,9 +33,10 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--color-black);
+  background: var(--dark-primary);
   border-radius: var(--switch-border-radius);
-  transition: var(--switch-transition);
+  transition: background-color var(--transition-standard),
+    transform var(--transition-standard);
   box-shadow: var(--box-shadow-light), var(--box-shadow-dark);
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -57,10 +54,12 @@
   width: var(--switch-knob-size);
   left: var(--switch-knob-margin);
   bottom: var(--switch-knob-margin);
-  background-color: var(--color-white);
+  background-color: var(--light-primary);
   border-radius: 50%;
-  transition: var(--switch-transition);
-  color: var(--color-black);
+  transition: transform var(--transition-standard),
+    background-color var(--transition-standard),
+    color var(--transition-standard);
+  color: var(--dark-primary);
   font-weight: bold;
   font-size: var(--switch-text-size);
   z-index: 2;
@@ -68,7 +67,7 @@
 
 .switch-slider:after {
   content: "R";
-  color: var(--color-white);
+  color: var(--light-primary);
   font-weight: bold;
   font-size: var(--switch-text-size);
   grid-column: 2;
@@ -84,30 +83,30 @@
     )
   );
   content: "R";
-  background-color: var(--color-black);
-  color: var(--color-white);
+  background-color: var(--dark-primary);
+  color: var(--light-primary);
 }
 
 .switch-input:checked + .switch-slider:after {
   content: "L";
   grid-column: 1;
-  color: var(--color-black);
+  color: var(--dark-primary);
   position: relative;
   z-index: 1;
 }
 
 .switch-input:checked + .switch-slider {
-  background: var(--color-white);
+  background: var(--light-primary);
 }
 
 .switch-container:hover {
-  transition: all var(--switch-transition) ease;
-  opacity: 0.9;
+  transition: all var(--transition-quick);
+  opacity: 1;
 }
 
 .theme-slider:before {
   content: "";
-  background-color: var(--color-white);
+  background-color: var(--light-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -115,14 +114,16 @@
 }
 
 .theme-slider {
-  background-image: url("assets/night-icon-light.svg");
+  background-image: url("../../assets/night-icon-light.svg");
   background-size: 16px;
   background-repeat: no-repeat;
   background-position: 80% center;
 }
 
 .switch-input:checked + .theme-slider {
-  background-image: url("assets/day-icon-dark.svg");
+  background-image: url("../../assets/day-icon-dark.svg");
+  background-size: 16px;
+  background-repeat: no-repeat;
   background-position: 20% center;
 }
 
@@ -149,4 +150,26 @@
 .theme-slider:before,
 .theme-slider:after {
   content: "" !important;
+}
+
+.random-theme-button {
+  font-family: var(--font-primary);
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: var(--switch-border-radius);
+  border: none;
+  background: var(--dark-primary);
+  color: var(--light-primary);
+  cursor: pointer;
+  transition: opacity var(--transition-quick);
+  opacity: var(--opacity-light);
+}
+
+.random-theme-button {
+  opacity: 1;
+}
+
+.dark-mode .random-theme-button {
+  background: var(--light-primary);
+  color: var(--dark-primary);
 }

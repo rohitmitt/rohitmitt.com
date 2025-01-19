@@ -2,19 +2,19 @@
 .dark-mode {
   transition: background-color var(--transition-standard),
     color var(--transition-standard);
-  background-color: black;
+  background-color: var(--dark-primary);
 }
 
 .dark-mode footer {
-  background-color: #0c0c0c;
+  background-color: var(--dark-secondary);
 }
 
 .dark-mode .content-wrapper {
-  color: white;
+  color: var(--light-primary);
 }
 
 .dark-mode .socials {
-  opacity: 0.8;
+  opacity: var(--opacity-light);
 }
 
 .dark-mode .social-item:hover .socials,
@@ -23,7 +23,7 @@
 }
 
 .dark-mode .social-label {
-  color: white;
+  color: var(--light-primary);
 }
 
 body.dark-mode .github-icon {
