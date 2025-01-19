@@ -1,6 +1,6 @@
 :root {
   /* Layout */
-  --max-width: 1400px;
+  --max-width: 1200px;
   --page-padding: 3rem;
 
   /* Typography */
@@ -11,8 +11,7 @@
   --line-height-heading: 1.2;
 
   /* VISUAL */
-
-  --transition-standard: 0.7s ease;
+  --transition-standard: 0.7s ease-out;
   --transition-quick: 0.2s ease;
   --opacity-light: 0.8;
 }

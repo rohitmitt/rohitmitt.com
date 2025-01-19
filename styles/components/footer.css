@@ -8,10 +8,11 @@ footer {
   padding: 0; /* Add some padding */
   display: flex; /* Add flex to center social-nav */
   justify-content: center; /* Center horizontally */
-  transition: transform var(--transition-standard),
-    background-color var(--transition-standard),
-    color var(--transition-standard);
-}
+  transition: 
+    transform var(--transition-standard),
+    background-color var(--transition-standard);
+  
+  }
 
 footer.hidden {
   transform: translateY(100%);
@@ -56,29 +57,19 @@ footer.hidden {
   content: url("../../assets/github-mark.png");
 }
 
+/* Base styles with transition */
 .social-label {
-  text-align: center; /* Ensures text itself is centered */
-  font-family: "Source Sans 3", system-ui, sans-serif;
+  color: var(--dark-primary);
+  text-align: center;
+  font-family: var(--font-primary);
   font-weight: bold;
   font-size: clamp(0.6rem, 2vw, 0.875rem);
 }
-
 .social-img,
 .social-label {
   opacity: var(--opacity-light);
-  transition: opacity 0.2s ease;
+  transition: opacity var(--transition-quick);
   cursor: inherit;
-}
-
-.social-item:hover .social-img,
-.social-item:hover .social-label {
-  opacity: 1;
-}
-
-.social-img,
-.social-label {
-  opacity: var(--opacity-light);
-  transition: opacity 0.2s ease;
 }
 
 /* Single hover rule for the entire item */

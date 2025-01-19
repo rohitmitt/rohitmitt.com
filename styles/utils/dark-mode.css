@@ -1,16 +1,19 @@
 /* Dark mode styles */
 .dark-mode {
-  transition: background-color var(--transition-standard),
-    color var(--transition-standard);
+  transition: background-color var(--transition-standard);
   background-color: var(--dark-primary);
+}
+
+.dark-mode h1 {
+  color: var(--light-secondary);
+}
+
+.dark-mode .content-wrapper {
+  color: var(--light-secondary);
 }
 
 .dark-mode footer {
   background-color: var(--dark-secondary);
-}
-
-.dark-mode .content-wrapper {
-  color: var(--light-primary);
 }
 
 .dark-mode .socials {

@@ -189,7 +189,7 @@ class RandomTheme {
     this.body = document.body;
     this.randomThemeButton = document.getElementById("randomThemeButton");
     this.themeClasses = ["theme-default", "theme-sage", "theme-terra"];
-    this.currentTheme = this.themeClasses[0]; // Store current theme
+    this.currentTheme = 0; // Store current theme Idx
     this.init();
   }
 
@@ -200,19 +200,18 @@ class RandomTheme {
   }
 
   setRandomTheme() {
+    const currTheme = this.themeClasses[this.currentTheme];
+
     // Remove current theme first
-    this.body.classList.remove(this.currentTheme);
+    this.body.classList.remove(currTheme);
 
-    // Create filtered list without current theme
-    const availableThemes = this.themeClasses.filter(
-      (theme) => theme !== this.currentTheme
-    );
+    this.currentTheme += 1; // Update current theme
+    if (this.currentTheme === this.themeClasses.length) {
+      this.currentTheme = 0;
+    }
 
-    const randomIndex = Math.floor(Math.random() * availableThemes.length);
-    const newTheme = availableThemes[randomIndex]; // Store the selected theme
-
-    this.body.classList.add(newTheme);
-    this.currentTheme = newTheme; // Update current theme
+    const nextTheme = this.themeClasses[this.currentTheme];
+    this.body.classList.add(nextTheme);
   }
 }
 

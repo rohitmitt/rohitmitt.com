@@ -3,9 +3,6 @@
   align-self: start;
   top: clamp(50px, 20vw - 100px, 200px);
   width: fit-content;
-  margin-left: auto;
-  background: transparent;
-  /* padding-top: 2rem; */
 }
 
 .navbar {
@@ -41,6 +38,7 @@
   transition: opacity 0.2s ease;
   transition: transform 0.2s ease; /* Smoothly animate translateX over 0.5 seconds */
   text-align: left;
+  
 }
 
 .nav-item:hover span {

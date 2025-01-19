@@ -7,6 +7,7 @@
   overflow: hidden; /* Clip content that overflows vertically */
 }
 
+/* Common styles for both images */
 .headerIMG {
   position: absolute;
   top: 0;
@@ -14,8 +15,28 @@
   width: 100%; /* Full viewport width */
   height: clamp(50px, 20vw - 100px, 200px);
   object-fit: cover;
-  object-position: left;
+  object-position: center;
   z-index: 1;
+  transition: opacity var(--transition-standard); /* Add opacity transition */
+}
+
+/* Light mode image visible by default */
+.headerIMG-light {
+  opacity: 1;
+}
+
+/* Dark mode image hidden by default */
+.headerIMG-dark {
+  opacity: 0.3;
+}
+
+/* When dark mode is active */
+body.dark-mode .headerIMG-light {
+  opacity: 0.3; /* Fade out light mode image */
+}
+
+body.dark-mode .headerIMG-dark {
+  opacity: 1; /* Fade in dark mode image */
 }
 
 h1 {

@@ -13,7 +13,6 @@
 .switch-container {
   font-family: var(--font-primary);
   font-weight: bold;
-  opacity: var(--opacity-light) + 1;
   position: relative;
   display: inline-block;
   width: var(--switch-width);
@@ -161,13 +160,13 @@
   background: var(--dark-primary);
   color: var(--light-primary);
   cursor: pointer;
-  transition: opacity var(--transition-quick);
-  opacity: var(--opacity-light);
+  /* transition: opacity var(--transition-quick);
+  opacity: var(--opacity-light); */
 }
 
-.random-theme-button {
+/* .random-theme-button {
   opacity: 1;
-}
+} */
 
 .dark-mode .random-theme-button {
   background: var(--light-primary);

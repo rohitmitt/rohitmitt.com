@@ -7,20 +7,21 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles/index.css" />
-
-    <link rel="preload" href="assets/header_smol.jpg" as="image" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>Rohit Mittal's personal website.</title>
   </head>
   <body class="theme-default">
     <img
-      class="headerIMG"
-      src="assets/header_smol.jpg"
-      alt="California"
-      fetchpriority="high"
-      loading="eager"
-    />
+    class="headerIMG headerIMG-light"
+    src="assets/header_smol.jpg"
+    alt="California"
+  />
+  <img
+    class="headerIMG headerIMG-dark"
+    src="assets/header_smol_night.jpg"
+    alt="California Dark"
+  />
     <div class="page-layout">
       <div class="header-container">
         <h1 id="header-text"></h1>
@@ -31,7 +32,7 @@
           <div class="dummy-content">
             <h2>Under Development.</h2>
             <button id="randomThemeButton" class="random-theme-button">
-              Random Theme
+              Next Theme
             </button>
 
             <h2>About Me</h2>
