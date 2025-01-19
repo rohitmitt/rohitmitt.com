@@ -1,0 +1,32 @@
+/* Dark mode styles */
+.dark-mode {
+  transition: background-color var(--transition-standard),
+    color var(--transition-standard);
+  background-color: black;
+}
+
+.dark-mode footer {
+  background-color: #0c0c0c;
+}
+
+.dark-mode .content-wrapper {
+  color: white;
+}
+
+.dark-mode .socials {
+  opacity: 0.8;
+}
+
+.dark-mode .social-item:hover .socials,
+.dark-mode .social-item:hover .social-label {
+  opacity: 1;
+}
+
+.dark-mode .social-label {
+  color: white;
+}
+
+body.dark-mode .github-icon {
+  content: url("../../assets/github-mark-white.png");
+}
+/* Add more dark mode styles as needed */

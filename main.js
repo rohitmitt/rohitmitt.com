@@ -102,6 +102,8 @@ class Typewriter {
 class PageDirection {
   constructor() {
     this.contentWrapper = document.querySelector(".content-wrapper");
+    this.navItems = document.querySelectorAll(".nav-item");
+
     this.switchButton = document.getElementById("switchButton"); // Store the switchButton reference
     this.init();
   }
@@ -111,9 +113,13 @@ class PageDirection {
 
     if (rtlEnabled) {
       this.contentWrapper.classList.add("rtl");
+      this.navItems.forEach((item) => item.classList.add("rtl"));
+
       this.switchButton.checked = false; // Set switch to checked if RTL is enabled
     } else {
       this.contentWrapper.classList.remove("rtl");
+      this.navItems.forEach((item) => item.classList.remove("rtl"));
+
       this.switchButton.checked = true; // Set switch to unchecked if RTL is disabled
     }
 
@@ -123,10 +129,12 @@ class PageDirection {
   toggleDirection() {
     if (!this.switchButton.checked) {
       this.contentWrapper.classList.add("rtl");
+      this.navItems.forEach((item) => item.classList.add("rtl"));
       localStorage.setItem("rtlEnabled", "enabled");
       console.log("RTL mode enabled");
     } else {
       this.contentWrapper.classList.remove("rtl");
+      this.navItems.forEach((item) => item.classList.remove("rtl"));
       localStorage.setItem("rtlEnabled", "disabled");
       console.log("RTL mode disabled");
     }

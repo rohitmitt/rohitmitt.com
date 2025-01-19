@@ -1,0 +1,66 @@
+/* styles.css */
+
+.page-layout {
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--page-padding);
+}
+
+.content-wrapper {
+  padding: 2rem 0;
+  display: grid;
+  grid-template-columns: 1fr auto; /* Main content | Navigation */
+  transition: transform var(--transition-standard); /* Animate the transformation */
+  gap: 4rem; /* Space between content and navigation */
+}
+
+.content-wrapper.rtl {
+  transform: scaleX(-1); /* Flip horizontally */
+}
+
+.content-wrapper > * {
+  transition: transform var(--transition-standard); /* Ensure children transition with the container */
+  transform: scaleX(1); /* Default non-flipped state */
+}
+
+.content-wrapper.rtl > * {
+  transform: scaleX(-1); /* Flip children when the container has class 'rtl' */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
+  width: 100%; /* Take up 90% of available width */
+  margin: 0 auto; /* Center the container */
+  padding: 0; /* Remove padding since page-wrapper handles it */
+  overflow-x: hidden;
+  position: relative; /* Create positioning context */
+  transition: background-color var(--transition-standard),
+    color var(--transition-standard);
+}
+
+/* Main content grows to fill space between header and footer */
+h2 {
+  font-family: var(--font-primary);
+  font-weight: bolder;
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-heading);
+  text-align: left;
+  width: 100%;
+  user-select: none;
+  position: relative;
+  margin: 0;
+}
+
+main {
+  flex: 1; /* Take up all available space */
+  position: relative; /* Create stacking context */
+  z-index: 1; /* Place behind navbar */
+  margin-top: 0; /* Remove negative margin */
+}
+
+.dummy-content {
+  min-height: 200vh; /* 2x viewport height to force scroll */
+}

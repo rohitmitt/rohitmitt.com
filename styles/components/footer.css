@@ -1,0 +1,89 @@
+footer {
+  position: fixed; /* Change from static to fixed */
+  bottom: 0; /* Stick to bottom */
+  left: 0;
+  width: 100%;
+  background-color: #f3f3f3;
+  z-index: 999; /* Keep above content but below navbar */
+  padding: 0; /* Add some padding */
+  display: flex; /* Add flex to center social-nav */
+  justify-content: center; /* Center horizontally */
+  transition: transform var(--transition-standard),
+    background-color var(--transition-standard),
+    color var(--transition-standard);
+}
+
+footer.hidden {
+  transform: translateY(100%);
+}
+
+.social-nav {
+  display: flex;
+  align-items: center;
+  padding-top: 0%;
+  padding-bottom: 0%;
+  gap: clamp(10px, 4vw - 1rem, 1rem); /* Gap between social-items 16px - 48px*/
+
+  /* Match page-layout since position:fixed */
+  max-width: var(--max-width);
+  width: 100%;
+  padding: 0 var(--page-padding);
+}
+
+.social-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.25rem; /* Add padding for larger click area */
+  text-decoration: none; /* Remove underline from link */
+  color: inherit; /* Keep text color */
+  cursor: pointer;
+  width: clamp(48px, 10vw, 64px); /* Fluid sizing for icons */
+  gap: 0rem; /* Remove gap between icon and label */
+}
+
+.social-img {
+  width: 75%;
+  aspect-ratio: 1; /* Keep square */
+  object-fit: contain;
+  object-position: center;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+  border-radius: 50%; /* Round the corners */
+}
+
+.github-icon {
+  content: url("../../assets/github-mark.png");
+}
+
+.social-label {
+  text-align: center; /* Ensures text itself is centered */
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-weight: bold;
+  font-size: clamp(0.6rem, 2vw, 0.875rem);
+}
+
+.social-img,
+.social-label {
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+  cursor: inherit;
+}
+
+.social-item:hover .social-img,
+.social-item:hover .social-label {
+  opacity: 1;
+}
+
+.social-img,
+.social-label {
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+/* Single hover rule for the entire item */
+.social-item:hover .social-img,
+.social-item:hover .social-label {
+  opacity: 1;
+  cursor: pointer;
+}

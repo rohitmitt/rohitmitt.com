@@ -1,0 +1,22 @@
+/* Layout */
+:root {
+  /* Layout */
+  --max-width: 1400px;
+
+  /* Transitions */
+  --transition-slow: 1s ease;
+  --transition-standard: 0.7s ease;
+  --transition-quick: 0.2s ease;
+
+  /* Spacing */
+  --page-padding: 3rem;
+}
+
+/* Typography */
+:root {
+  --font-primary: "Source Sans 3", system-ui, sans-serif;
+  --font-size-h1: clamp(1.5rem, 8vw - 1rem, 6rem);
+  --font-size-h2: clamp(1.5rem, 6vw - 1rem, 3rem);
+  --line-height-normal: 1.5;
+  --line-height-heading: 1.2;
+}

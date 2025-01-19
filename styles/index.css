@@ -1,0 +1,18 @@
+/* styles/index.css */
+/* Base */
+@import "base/variables.css";
+@import "base/reset.css";
+@import "base/typography.css";
+
+/* Layouts */
+@import "layouts/main.css";
+
+/* Components */
+@import "components/navbar.css";
+@import "components/footer.css";
+@import "components/header.css";
+@import "components/slider.css";
+
+/* Utils */
+@import "utils/dark-mode.css";
+@import "utils/responsive.css";
