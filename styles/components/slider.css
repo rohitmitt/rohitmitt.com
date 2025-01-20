@@ -17,6 +17,7 @@
   display: inline-block;
   width: var(--switch-width);
   height: var(--switch-height);
+  opacity: var(--opacity-light);
 }
 
 .switch-input {
@@ -159,14 +160,14 @@
   border: none;
   background: var(--dark-primary);
   color: var(--light-primary);
+  opacity: var(--opacity-light);
   cursor: pointer;
-  /* transition: opacity var(--transition-quick);
-  opacity: var(--opacity-light); */
-}
-
-/* .random-theme-button {
-  opacity: 1;
-} */
+  transition: opacity var(--transition-quick);
+  }
+  
+  .random-theme-button:hover {
+    opacity: 1;
+  }
 
 .dark-mode .random-theme-button {
   background: var(--light-primary);
