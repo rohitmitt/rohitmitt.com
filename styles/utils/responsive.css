@@ -26,7 +26,7 @@
 
   /* SLIDER */
   :root {
-    --switch-width: 30px;
+    --footer-width: 30px;
     --box-shadow-light: 0;
     --box-shadow-dark: 0;
     --box-shadow-knob: 0;
@@ -52,12 +52,12 @@
   }
 
   /* L background */
-  .switch-slider {  
+  .switch-slider {
     background: var(--dark-primary);
     transition: transform 0s, color 0s;
   }
 
-    /* L knob */
+  /* L knob */
   .switch-slider:before {
     background-color: var(--dark-primary);
     color: var(--light-primary);
@@ -78,11 +78,11 @@
   }
 
   /* L background */
-  .dark-mode .switch-slider {  
+  .dark-mode .switch-slider {
     background: var(--light-primary);
   }
 
-    /* L knob */
+  /* L knob */
   .dark-mode .switch-slider:before {
     background-color: var(--light-primary);
     color: var(--dark-primary);
@@ -116,5 +116,10 @@
   .nav-item span:nth-child(2),
   .nav-item span:nth-child(3) {
     display: none; /* Remove completely from flow */
+  }
+
+  /* remove social labels from flow */
+  .social-label {
+    display: none;
   }
 }

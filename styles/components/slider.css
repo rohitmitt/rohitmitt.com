@@ -1,13 +1,12 @@
 :root {
-  --switch-width: 60px;
-  --switch-height: 30px;
-  --switch-border-radius: 15px;
-  --switch-knob-size: 24px;
-  --switch-knob-margin: 3px;
-  --switch-text-size: 14px;
-  --box-shadow-light: -2px -2px 6px rgba(255, 255, 255, 0.6);
-  --box-shadow-dark: 2px 2px 6px rgba(0, 0, 0, 0.3);
-  --box-shadow-knob: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  --footer-width: 60px;
+  --footer-height: 30px;
+  --footer-border-radius: 15px;
+  --footer-knob-size: 24px;
+  --footer-knob-margin: 3px;
+  --footer-text-size: 14px;
+  --box-shadow-light: -5px -3px 10px rgba(255, 255, 255, 0.6);
+  --box-shadow-dark: 7px 5px 1px rgba(0, 0, 0, 0.3);
 }
 
 .switch-container {
@@ -15,8 +14,8 @@
   font-weight: bold;
   position: relative;
   display: inline-block;
-  width: var(--switch-width);
-  height: var(--switch-height);
+  width: var(--footer-width);
+  height: var(--footer-height);
   opacity: var(--opacity-light);
 }
 
@@ -35,15 +34,19 @@
   right: 0;
   bottom: 0;
   background: var(--dark-primary);
-  border-radius: var(--switch-border-radius);
+  border-radius: var(--footer-border-radius); /* round corners */
   transition: background-color var(--transition-standard),
-    transform var(--transition-standard);
-  box-shadow: var(--box-shadow-light), var(--box-shadow-dark);
+    transform var(--transition-standard), box-shadow var(--transition-standard);
+  box-shadow: var(--box-shadow-dark);
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
   justify-items: center;
   padding: 0;
+}
+
+.dark-mode .switch-slider {
+  box-shadow: var(--box-shadow-light);
 }
 
 /* L knob */
@@ -52,10 +55,10 @@
   content: "L";
   display: grid;
   place-items: center;
-  height: var(--switch-knob-size);
-  width: var(--switch-knob-size);
-  left: var(--switch-knob-margin);
-  bottom: var(--switch-knob-margin);
+  height: var(--footer-knob-size);
+  width: var(--footer-knob-size);
+  left: var(--footer-knob-margin);
+  bottom: var(--footer-knob-margin);
   background-color: var(--light-primary);
   border-radius: 50%;
   transition: transform var(--transition-standard),
@@ -63,7 +66,7 @@
     color var(--transition-standard);
   color: var(--dark-primary);
   font-weight: bold;
-  font-size: var(--switch-text-size);
+  font-size: var(--footer-text-size);
   z-index: 2;
 }
 
@@ -72,7 +75,7 @@
   content: "R";
   color: var(--light-primary);
   font-weight: bold;
-  font-size: var(--switch-text-size);
+  font-size: var(--footer-text-size);
   grid-column: 2;
   z-index: 1;
   position: relative;
@@ -82,7 +85,7 @@
 .switch-input:checked + .switch-slider:before {
   transform: translateX(
     calc(
-      var(--switch-width) - var(--switch-knob-size) - var(--switch-knob-margin) *
+      var(--footer-width) - var(--footer-knob-size) - var(--footer-knob-margin) *
         2
     )
   );
@@ -116,7 +119,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--box-shadow-knob);
 }
 
 .theme-slider {
@@ -161,39 +163,41 @@
 .random-theme-button {
   font-family: var(--font-primary);
   font-weight: bold;
+  font-size: var(--footer-text-size);
   min-width: fit-content;
+  height: var(--footer-height);
   padding: 0.5rem 0.5rem;
-  border-radius: var(--switch-border-radius);
+  border-radius: var(--footer-border-radius);
   border: none;
   background: var(--dark-primary);
   color: var(--light-primary);
-  box-shadow: var(--box-shadow-light), var(--box-shadow-dark);
+  box-shadow: var(--box-shadow-dark);
   opacity: var(--opacity-light);
   cursor: pointer;
-  transition: opacity var(--transition-quick);
-
+  transition: opacity var(--transition-quick),
+    box-shadow var(--transition-standard);
   display: flex;
   justify-content: center;
   align-items: center;
+}
 
-  }
+.random-theme-button span {
+  display: none;
+}
 
-  .random-theme-button span {
-    display: none;
-  }
-  
-  .random-theme-button::after {
-    content: "Theme"; /* Default text */
-    text-align: center;
-    width: 100%;
-    white-space: nowrap; /* Prevent text wrap */
-  }
-  
-  .random-theme-button:hover {
-    opacity: 1;
-  }
+.random-theme-button::after {
+  content: "Theme"; /* Default text */
+  text-align: center;
+  width: 100%;
+  white-space: nowrap; /* Prevent text wrap */
+}
+
+.random-theme-button:hover {
+  opacity: 1;
+}
 
 .dark-mode .random-theme-button {
   background: var(--light-primary);
   color: var(--dark-primary);
+  box-shadow: var(--box-shadow-light);
 }

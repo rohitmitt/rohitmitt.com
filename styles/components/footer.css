@@ -8,11 +8,9 @@ footer {
   padding: 0; /* Add some padding */
   display: flex; /* Add flex to center social-nav */
   justify-content: center; /* Center horizontally */
-  transition: 
-    transform var(--transition-standard),
+  transition: transform var(--transition-standard),
     background-color var(--transition-standard);
-  
-  }
+}
 
 footer.hidden {
   transform: translateY(100%);
@@ -31,23 +29,21 @@ footer.hidden {
   padding: 0 var(--page-padding);
 }
 
+/* REMOVED LABEL */
 .social-item {
   display: flex;
-  flex-direction: column;
+  justify-content: end;
   align-items: center;
-  padding: 0.25rem; /* Add padding for larger click area */
   text-decoration: none; /* Remove underline from link */
   color: inherit; /* Keep text color */
   cursor: pointer;
-  width: clamp(48px, 10vw, 64px); /* Fluid sizing for icons */
   gap: 0rem; /* Remove gap between icon and label */
 }
 
 .social-img {
-  width: 75%;
+  width: 30px;
+  height: 30px;
   aspect-ratio: 1; /* Keep square */
-  object-fit: contain;
-  object-position: center;
   opacity: var(--opacity-light);
   transition: opacity 0.2s ease;
   border-radius: 50%; /* Round the corners */
@@ -63,7 +59,8 @@ footer.hidden {
   text-align: center;
   font-family: var(--font-primary);
   font-weight: bold;
-  font-size: clamp(0.6rem, 2vw, 0.875rem);
+  font-size: var(--footer-text-size);
+  padding-left: 5px;
 }
 .social-img,
 .social-label {
