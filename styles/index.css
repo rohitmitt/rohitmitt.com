@@ -2,7 +2,6 @@
 /* Base */
 @import "base/variables.css";
 @import "base/reset.css";
-@import "base/typography.css";
 
 /* Layouts */
 @import "layout/main.css";
