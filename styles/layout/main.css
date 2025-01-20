@@ -13,7 +13,7 @@
   grid-template-columns: 1fr auto; /* Main content | Navigation */
   transition: transform var(--transition-standard); /* Animate the transformation */
   gap: 4rem; /* Space between content and navigation */
-  color: var(--dark-primary); 
+  color: var(--dark-primary);
 }
 
 .content-wrapper.rtl {
@@ -45,9 +45,13 @@ body {
 body {
 }
 
-h1, h2, h3, p, span, a {
+h1,
+h2,
+h3,
+p,
+span,
+a {
 }
-
 
 /* Main content grows to fill space between header and footer */
 h2 {

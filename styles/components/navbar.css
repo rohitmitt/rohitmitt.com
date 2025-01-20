@@ -26,7 +26,7 @@
 
 .nav-item {
   display: grid;
-  grid-template-columns: 80px 10px 1fr;
+  grid-template-columns: 1fr 25px 1fr;
   align-items: center;
 }
 
@@ -38,7 +38,29 @@
   transition: opacity 0.2s ease;
   transition: transform 0.2s ease; /* Smoothly animate translateX over 0.5 seconds */
   text-align: left;
-  
+}
+.nav-item span:nth-child(2) {
+  text-align: center;
+}
+
+/* RTL nav doesn't affect mobile navbar  */
+@media screen and (min-width: 768px) {
+  .content-wrapper.rtl .nav-item span:nth-child(2) {
+    text-align: left;
+  }
+  .content-wrapper.rtl .nav-item {
+    grid-template-columns: 1fr 14px 1fr;
+  }
+  .content-wrapper.rtl .nav-item span:nth-child(1) {
+    order: -1;
+  }
+  .content-wrapper.rtl .nav-item span:nth-child(2) {
+    order: -2;
+  }
+  .content-wrapper.rtl .nav-item span:nth-child(3) {
+    order: -3;
+    padding-left: 0px;
+  }
 }
 
 .nav-item:hover span {
