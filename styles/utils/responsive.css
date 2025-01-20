@@ -16,6 +16,10 @@
     gap: 2rem;
   }
 
+  h1 {
+    margin-bottom: 0rem;
+  }
+
   /* SLIDER */
   :root {
     --switch-width: 30px;
