@@ -24,7 +24,7 @@
     --box-shadow-knob: 1px 1px 3px rgba(0, 0, 0, 0.2);
   }
   .switch-group {
-    gap: 3rem;
+    gap: 1.5rem;
   }
   .theme-slider:before {
     background-image: url("../../assets/day-icon-dark.svg");
