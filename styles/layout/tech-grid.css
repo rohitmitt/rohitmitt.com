@@ -1,14 +1,14 @@
 .project-grid {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: center;
-    gap: 1rem;
-    /* grid-row-gap: 0; */
-    margin: 1rem 0;
-    padding: 1rem;
-    background-color: var(--light-secondary);
-    transition: background-color var(--transition-standard);
-  }
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 1rem;
+  /* grid-row-gap: 0; */
+  margin: 1rem 0;
+  padding: 2rem;
+  background-color: var(--light-secondary);
+  transition: background-color var(--transition-standard);
+}
 
 .project-category {
   display: flex;
@@ -16,7 +16,7 @@
 }
 
 .tech-stack {
-  display: flex;  /* Change to flex for horizontal row */
+  display: flex; /* Change to flex for horizontal row */
   flex-direction: row;
   flex-wrap: nowrap;
   gap: clamp(10px, 4vw - 1rem, 1rem);
@@ -27,8 +27,8 @@
 .tech-container {
   display: flex;
   align-items: center;
-  white-space: nowrap;  /* Prevent label wrapping */
-  color: inherit; 
+  white-space: nowrap; /* Prevent label wrapping */
+  color: inherit;
   cursor: pointer;
   position: relative;
   border: none;
@@ -48,7 +48,7 @@
 
 .tech-icon {
   width: 50px;
-  height: 50px;   
+  height: 50px;
 }
 
 .tech-container:hover {
