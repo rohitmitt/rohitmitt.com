@@ -45,10 +45,6 @@
   padding: 0;
 }
 
-.dark-mode .switch-slider {
-  box-shadow: var(--box-shadow-light);
-}
-
 /* L knob */
 .switch-slider:before {
   position: absolute;
@@ -213,10 +209,4 @@
 
 .random-theme-button:hover {
   opacity: 1;
-}
-
-.dark-mode .random-theme-button {
-  background: var(--light-primary);
-  color: var(--dark-primary);
-  box-shadow: var(--box-shadow-light);
 }

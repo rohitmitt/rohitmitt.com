@@ -30,15 +30,6 @@
   opacity: 0.3;
 }
 
-/* When dark mode is active */
-body.dark-mode .headerIMG-light {
-  opacity: 0.3; /* Fade out light mode image */
-}
-
-body.dark-mode .headerIMG-dark {
-  opacity: 1; /* Fade in dark mode image */
-}
-
 h1 {
   font-family: var(--font-primary);
   font-weight: bolder;

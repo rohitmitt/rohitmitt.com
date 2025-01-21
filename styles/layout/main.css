@@ -42,6 +42,16 @@ body {
   transition: background-color var(--transition-standard);
 }
 
+h1,
+h2,
+h3,
+p,
+span,
+a,
+footer {
+  color: inherit;
+}
+
 /* Main content grows to fill space between header and footer */
 h2 {
   font-family: var(--font-primary);
