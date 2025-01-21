@@ -1,5 +1,14 @@
 /* styles.css */
 
+section {
+  margin-top: 100vh; 
+  padding: 2rem; 
+  background-color: var(--light-secondary);
+  transition: background-color var(--transition-standard);
+}
+.dark-mode section {
+  background-color: var(--dark-secondary);
+}
 .page-layout {
   max-width: var(--max-width);
   width: 100%;
@@ -17,6 +26,7 @@
 }
 
 .content-wrapper.rtl {
+  grid-template-columns: 1fr auto; /*FLIPPED Navigation | Main content */
   transform: scaleX(-1); /* Flip horizontally */
 }
 
@@ -50,6 +60,8 @@ span,
 a,
 footer {
   color: inherit;
+  font-family: var(--font-primary);
+  text-decoration: none;
 }
 
 /* Main content grows to fill space between header and footer */
@@ -57,17 +69,28 @@ h2 {
   font-family: var(--font-primary);
   font-weight: bolder;
   font-size: var(--font-size-h2);
-  line-height: var(--line-height-heading);
+  line-height: 1;
   text-align: left;
   width: 100%;
   user-select: none;
   position: relative;
+  margin-bottom: 1rem;
+}
+
+h2.section-header {
+  margin-top: clamp(50px, 20vw - 100px, 200px);
+}
+
+h3 {
+  font-family: var(--font-primary);
+  font-weight: bolder;
+  font-size: var(--font-size-h3);
 }
 
 p {
   font-family: var(--font-primary);
-  font-weight: bolder;
-  font-size: 1rem;
+  font-weight: normal;
+  font-size: 1.3rem;
   line-height: var(--line-height-text );
   text-align: left;
   width: 100%;
@@ -80,6 +103,7 @@ main {
   z-index: 1; /* Place behind navbar */
   margin-top: 0; /* Remove negative margin */
 }
+
 .text-block {
   max-width: 100%;
   margin: 0 auto;

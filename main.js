@@ -103,18 +103,23 @@ class PageDirection {
   constructor() {
     this.contentWrapper = document.querySelector(".content-wrapper");
     this.navItems = document.querySelectorAll(".nav-item");
-
     this.switchButton = document.getElementById("switchButton"); // Store the switchButton reference
     this.init();
   }
 
   init() {
-    const rtlEnabled = localStorage.getItem("rtlEnabled") === "enabled";
+    // If localStorage is null/undefined, use false as default (LTR)
+    localStorage.removeItem("rtlEnabled"); 
+
+    // Check if rtlEnabled is stored in localStorage key pair 
+    const rtlValue = localStorage.getItem("rtlEnabled");
+
+    // If null, set to true, else use the bool value from localStorage
+    const rtlEnabled = rtlValue === null ? true : rtlValue === "enabled";
 
     if (rtlEnabled) {
       this.contentWrapper.classList.add("rtl");
       this.navItems.forEach((item) => item.classList.add("rtl"));
-
       this.switchButton.checked = false; // Set switch to checked if RTL is enabled
     } else {
       this.contentWrapper.classList.remove("rtl");

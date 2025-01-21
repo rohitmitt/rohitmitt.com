@@ -17,12 +17,11 @@ footer.hidden {
   transform: translateY(100%);
 }
 
-.social-nav {
+.footer-container {
   display: flex;
   align-items: center;
   padding-top: 0%;
   padding-bottom: 0%;
-  gap: clamp(10px, 4vw - 1rem, 1rem); /* Gap between social-items 16px - 48px*/
 
   /* Match page-layout since position:fixed */
   max-width: var(--max-width);
@@ -30,14 +29,17 @@ footer.hidden {
   padding: 0 var(--page-padding);
 }
 
-/* REMOVED LABEL */
+.social-group {
+  display: flex;
+  gap: clamp(10px, 4vw - 1rem, 1rem);
+  margin-left: auto;
+}
+
 .social-item {
   display: flex;
-  justify-content: end;
   align-items: center;
   text-decoration: none; /* Remove underline from link */
   cursor: pointer;
-  gap: 0rem; /* Remove gap between icon and label */
 }
 
 .social-img {
@@ -52,6 +54,7 @@ footer.hidden {
 .github-icon {
   content: url("../../assets/github-mark.png");
 }
+
 
 /* Base styles with transition */
 .social-label {

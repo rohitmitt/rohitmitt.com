@@ -1,7 +1,7 @@
 .navbar-container {
   position: sticky;
   align-self: start;
-  top: clamp(50px, 20vw - 100px, 200px);
+  top: clamp(50px, 20vw - 100px, 100px);
   width: fit-content;
 }
 

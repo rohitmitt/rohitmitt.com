@@ -17,21 +17,16 @@
     --max-width: 100%;
     --page-padding: 2rem;
   }
-
   .content-wrapper {
     padding: 1.5rem 0;
     gap: 2rem;
   }
-
   .tech-grid {
     grid-template-columns: repeat(3, clamp(25px, 15vw, 100px));
   }
-
-
   h1 {
     margin-bottom: 0rem;
   }
-
 
   /* SLIDERS */
   :root {
@@ -40,45 +35,36 @@
     --box-shadow-dark: 0;
     --box-shadow-knob: 0;
   }
-
   .theme-slider:before {
     display: none
   }
-
   .theme-icon {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  
   .moon-icon {
     visibility: visible;
   }
-
   .sun-icon {
     visibility: hidden;
   }
-
   .dark-mode .moon-icon {
     visibility: hidden;
     opacity: 1;
   }
-
   .dark-mode .sun-icon {
     visibility: visible;
   }
-  
   .icon-path {
     fill: var(--light-primary);
     transition: all 0s;
   }
-
   .dark-mode .icon-path {
     fill: var(--dark-primary);
     transition: all 0s;
   }
-
   .random-theme-button::after {
     padding: 0;
   }
@@ -88,20 +74,17 @@
     background: var(--dark-primary);
     transition: transform 0s, color 0s;
   }
-
   /* L BG + TEXT - LIGHT MODE */
   .switch-slider:before {
     background-color: var(--dark-primary);
     color: var(--light-primary);
     transition: transform 0s, color 0s;
   }
-
   /* R OUTLINE - LIGHT MODE*/
   .switch-input:checked + .switch-slider {
     background: var(--dark-primary);
     transition: transform 0s, color 0s;
   }
-
   /* R BG + TEXT - LIGHT MODE*/
   .switch-input:checked + .switch-slider:before {
     background-color: var(--dark-primary);
@@ -125,16 +108,13 @@
   .nav-item {
     grid-template-columns: 1fr; /* Only one column instead of three */
   }
-
   .nav-item span:nth-child(1) {
     padding-top: 5px; /* Add padding to top of each element*/
   }
-
   /* When parent has rtl class, change grid-column to 1 to be 'left' */
   .content-wrapper.rtl .nav-item span:nth-child(1) {
     grid-column: 1;
   }
-
   .nav-item span:nth-child(2),
   .nav-item span:nth-child(3) {
     display: none; /* Remove completely from flow */

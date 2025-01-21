@@ -159,7 +159,7 @@
   gap: clamp(10px, 4vw - 1rem, 1rem);
   align-items: center;
   margin: 1rem 0;
-  margin-right: auto;
+  margin-right: auto; /* Force items to the right */
 }
 
 .direction-slider:before {

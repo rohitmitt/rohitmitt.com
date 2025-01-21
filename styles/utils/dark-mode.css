@@ -8,12 +8,20 @@
   background-color: var(--dark-primary);
   color: var(--light-secondary);
 }
+
 .dark-mode .page-layout,
 .dark-mode .content-wrapper,
 .dark-mode main,
 .dark-mode .dummy-content,
-.dark-mode .text-block {
+.dark-mode .text-block,
+.dark-mode .tech-label {
   color: inherit;
+}
+
+
+
+.dark-mode .project-grid {
+  background-color: var(--dark-secondary);
 }
 
 /* HEADER STYLES */
@@ -41,11 +49,6 @@ body.dark-mode .github-icon {
   background: var(--light-primary);
   color: var(--dark-primary);
   box-shadow: var(--box-shadow-light);
-}
-
-/* MOBILE  */
-@media screen and (max-width: 768px) {
-  /* SWITCH STYLING */
 }
 
 /* Add more dark mode styles as needed */

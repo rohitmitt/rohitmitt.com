@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width" />
     <title>Rohit Mittal's personal website.</title>
   </head>
-  <body class="theme-terra">
+  <body class="theme-default">
     <img
       class="headerIMG headerIMG-light"
       src="assets/header_smol.jpg"
@@ -30,7 +30,7 @@
         <main>
           <!-- Your main content here -->
           <div class="dummy-content">
-            <h2>About</h2>
+            <h2 id="About">About</h2>
             <div class="text-block">
               <p>
                 I'm a full-stack developer who builds web applications, AI
@@ -43,183 +43,72 @@
               </p>
             </div>
               
-            <div class="tech-grid">
-              <!-- AWS -->
-              <div class="tech-icon-container">
-                <button 
-                  class="tech-icon-wrapper" 
-                  onclick="handleTechClick('aws')"
-                  onkeypress="handleTechKeypress(event, 'aws')"
-                  data-tooltip="Amazon Web Services"
-                  aria-label="Learn more about AWS"
-                  tabindex="0">
-                  <img class="tech-icon" src="assets/tech/AWS.svg" alt="AWS" />
-                </button>
-              </div>
-
-              <!-- C++ -->
-              <div class="tech-icon-container">
-                <button 
-                class="tech-icon-wrapper" 
-                onclick="handleTechClick('cpp')"
-                onkeypress="handleTechKeypress(event, 'cpp')"
-                data-tooltip="C++"
-                aria-label="Learn more about C++"
-                tabindex="0">
-                <img class="tech-icon" src="assets/tech/C++.svg" alt="C++" />
-                </button>
-              </div>
-
-              <!-- CSS3 -->
-              <button 
-              class="tech-icon-wrapper" 
-              onclick="handleTechClick('css')"
-              onkeypress="handleTechKeypress(event, 'css')"
-              data-tooltip="CSS3"
-              aria-label="Learn more about CSS3"
-              tabindex="0">
-              <img class="tech-icon" src="assets/tech/CSS3.svg" alt="CSS3" />
-              </button>
-
-              <!-- Flask -->
-              <button 
-              class="tech-icon-wrapper" 
-              onclick="handleTechClick('flask')"
-              onkeypress="handleTechKeypress(event, 'flask')"
-              data-tooltip="Flask"
-              aria-label="Learn more about Flask"
-              tabindex="0">
-              <img class="tech-icon" src="assets/tech/Flask.png" alt="Flask" />
-              </button>
-
-              <!-- Git -->
-              <button 
-              class="tech-icon-wrapper" 
-              onclick="handleTechClick('git')"
-              onkeypress="handleTechKeypress(event, 'git')"
-              data-tooltip="Git"
-              aria-label="Learn more about Git"
-              tabindex="0">
-              <img class="tech-icon" src="assets/tech/Git.svg" alt="Git" />
-              </button>
-
-              <!-- JavaScript -->
-              <button 
-              class="tech-icon-wrapper" 
-              onclick="handleTechClick('javascript')"
-              onkeypress="handleTechKeypress(event, 'javascript')"
-              data-tooltip="JavaScript"
-              aria-label="Learn more about JavaScript"
-              tabindex="0">
-              <img class="tech-icon" src="assets/tech/JavaScript.svg" alt="JavaScript" />
-              </button>
-
-              <!-- NGINX -->
-              <button 
-              class="tech-icon-wrapper" 
-              onclick="handleTechClick('nginx')"
-              onkeypress="handleTechKeypress(event, 'nginx')"
-              data-tooltip="NGINX"
-              aria-label="Learn more about NGINX"
-              tabindex="0">
-              <img class="tech-icon" src="assets/tech/NGINX.svg" alt="NGINX" />
-              </button>
-
-              <!-- Node.js -->
-              <button 
-              class="tech-icon-wrapper" 
-              onclick="handleTechClick('nodejs')"
-              onkeypress="handleTechKeypress(event, 'nodejs')"
-              data-tooltip="Node.js"
-              aria-label="Learn more about Node.js"
-              tabindex="0">
-              <img class="tech-icon" src="assets/tech/Node.js.svg" alt="Node.js" />
-              </button>
-
-              <!-- PostgreSQL -->
-              <button 
-              class="tech-icon-wrapper" 
-              onclick="handleTechClick('postgresql')"
-              onkeypress="handleTechKeypress(event, 'postgresql')"
-              data-tooltip="PostgreSQL"
-              aria-label="Learn more about PostgreSQL"
-              tabindex="0">
-              <img class="tech-icon" src="assets/tech/PostgresSQL.svg" alt="PostgreSQL" />
-              </button>
-
-              <!-- Python -->
-              <button 
-              class="tech-icon-wrapper" 
-              onclick="handleTechClick('python')"
-              onkeypress="handleTechKeypress(event, 'python')"
-              data-tooltip="Python"
-              aria-label="Learn more about Python"
-              tabindex="0">
-              <img class="tech-icon" src="assets/tech/Python.svg" alt="Python" />
-              </button>
-
-              <!-- PyTorch -->
-              <button 
-              class="tech-icon-wrapper" 
-              onclick="handleTechClick('pytorch')"
-              onkeypress="handleTechKeypress(event, 'pytorch')"
-              data-tooltip="PyTorch"
-              aria-label="Learn more about PyTorch"
-              tabindex="0">
-              <img class="tech-icon" src="assets/tech/Pytorch.svg" alt="PyTorch" />
-              </button>
-
-              <!-- React -->
-              <button 
-              class="tech-icon-wrapper" 
-              onclick="handleTechClick('react')"
-              onkeypress="handleTechKeypress(event, 'react')"
-              data-tooltip="React"
-              aria-label="Learn more about React"
-              tabindex="0">
-              <img class="tech-icon" src="assets/tech/React.svg" alt="React" />
-              </button>
+            <div class="project-grid">
+              <!-- Update using techGridLoader.js -->    
             </div>
-            
-            <h2>Projects</h2>
-            <h2>Journey</h2>
-            <h2>Purpose</h2>
+
+            <h2 class="section-header" id="Projects">Projects</h2>
+
+            <div class="dummy-content">
+              <section id="Web Development">
+                <h2>Project Name</h2>
+                <p>Test scroll.</p>
+              </section>
+              </div>
+
+            <h2 class="section-header" id="Journey">Journey</h2>
+            <div class="dummy-content"></div>
+
+            <h2 class="section-header" id="Connect">Connect</h2>
+            <div class="dummy-content"></div>
+            <h2 class="section-header" id="Purpose">Purpose</h2>
+            <div class="dummy-content"></div>
           </div>
           <!-- Your main content ends here -->
         </main>
         <nav class="navbar-container">
           <ul class="navbar">
-            <li class="nav-item">
-              <span>About</span>
-              <span>|</span>
-              <span>Who?</span>
-            </li>
-            <li class="nav-item">
-              <span>Projects</span>
-              <span>|</span>
-              <span>What?</span>
-            </li>
-            <li class="nav-item">
-              <span>Journey</span>
-              <span>|</span>
-              <span>When?</span>
-            </li>
-            <li class="nav-item">
-              <span>Connect</span>
-              <span>|</span>
-              <span>Where?</span>
-            </li>
-            <li class="nav-item">
-              <span>Purpose</span>
-              <span>|</span>
-              <span>Why?</span>
-            </li>
+            <a href="#top">
+              <li class="nav-item">
+                <span>About</span>
+                <span>|</span>
+                <span>Who?</span>
+              </li>
+            </a>
+            <a href="#Projects">
+              <li class="nav-item">
+                <span>Projects</span>
+                <span>|</span>
+                <span>What?</span>
+              </li>
+            </a>
+            <a href="#Journey">
+              <li class="nav-item">
+                <span>Journey</span>
+                <span>|</span>
+                <span>When?</span>
+              </li>
+            </a>
+            <a href="#Connect">
+              <li class="nav-item">
+                <span>Connect</span>
+                <span>|</span>
+                <span>Where?</span>
+              </li>
+            </a>
+            <a href="#Purpose">
+              <li class="nav-item">
+                <span>Purpose</span>
+                <span>|</span>
+                <span>Why?</span>
+              </li>
+            </a>
           </ul>
         </nav>
       </div>
 
       <footer>
-        <nav class="social-nav">
+        <nav class="footer-container">
           <div class="switch-group">
             <label class="switch-container">
               <input type="checkbox" class="switch-input" id="switchButton" />
@@ -254,34 +143,37 @@
               <span></span>
             </button>
           </div>
-
-          <a href="" target="_blank" class="social-item">
-            <img class="social-img" src="assets/roheat.png" alt="blog-mark" />
-            <span class="social-label">Blog</span>
-          </a>
-          <a
-            href="https://github.com/rohitmitt"
-            target="_blank"
-            class="social-item"
-          >
-            <img class="social-img github-icon" alt="github-mark" />
-            <span class="social-label">GitHub</span>
-          </a>
-          <a
-            href="https://linkedin.com/in/rohitmitt"
-            target="_blank"
-            class="social-item"
-          >
-            <img
-              class="social-img"
-              src="assets/linkedin.png"
-              alt="linkedin-mark"
-            />
-            <span class="social-label">LinkedIn</span>
-          </a>
+          <div class="social-group">
+            <a href="" target="_blank" class="social-item">
+              <img class="social-img" src="assets/roheat.png" alt="blog-mark" />
+              <span class="social-label">My Blog</span>
+            </a>
+            <a
+              href="https://github.com/rohitmitt"
+              target="_blank"
+              class="social-item"
+            >
+              <img class="social-img github-icon" alt="github-mark" />
+              <span class="social-label">GitHub</span>
+            </a>
+            <a
+              href="https://linkedin.com/in/rohitmitt"
+              target="_blank"
+              class="social-item"
+            >
+              <img
+                class="social-img"
+                src="assets/linkedin.png"
+                alt="linkedin-mark"
+              />
+              <span class="social-label">LinkedIn</span>
+            </a>
+          </div>
         </nav>
       </footer>
       <script src="main.js"></script>
+      <script src="techGridLoader.js"></script>
+      <script src="navbar.js"></script>
     </div>
   </body>
 </html>

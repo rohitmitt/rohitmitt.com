@@ -1,59 +1,74 @@
-.tech-grid {
+.project-grid {
     display: grid;
-    grid-template-columns: repeat(4, clamp(25px, 15vw, 100px));
-    gap: 2rem;
-    margin: 2rem auto;
-    place-items: center;
-    justify-content: center;
-  }
-  
-.tech-icon-wrapper {
-    cursor: pointer;
-    position: relative;
-    border: none;
-    background: none;
-    padding: 0;
-    width: fit-content;
-    transition: transform var(--transition-standard);
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 1rem;
+    /* grid-row-gap: 0; */
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: var(--light-secondary);
+    transition: background-color var(--transition-standard);
   }
 
-  .tech-icon-container {
-    display: grid;
-    gap: 0.5rem;
-    text-align: center;
-  }
-  
-  .tech-label {
-    font-size: 0.8rem;
-    color: var(--dark-primary);
-    font-weight: 500;
-  }
-  
+.project-category {
+  display: flex;
+  padding: 0.5rem 1rem;
+}
 
-  .tech-icon {
-    width: 50px;
-    height: 50px;   
-  }
-  
-  .tech-icon-wrapper:hover {
-    transform: scale(1.1);
-  }
-  
-  .tech-icon-wrapper:focus {
-    outline: 2px solid var(--dark-primary);
-    border-radius: 4px;
-  }
-  
-  .tech-icon-wrapper:hover::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--dark-primary);
-    color: var(--light-primary);
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    white-space: nowrap;
-  }
+.tech-stack {
+  display: flex;  /* Change to flex for horizontal row */
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: clamp(10px, 4vw - 1rem, 1rem);
+  align-items: center;
+  width: fit-content;
+}
+
+.tech-container {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;  /* Prevent label wrapping */
+  color: inherit; 
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: none;
+  padding: 0;
+  width: fit-content;
+  transition: transform var(--transition-quick);
+}
+
+.tech-label {
+  font-family: var(--font-primary);
+  font-size: var(--footer-text-size);
+  font-weight: bold;
+  color: var(--dark-primary);
+  padding-left: 5px;
+}
+
+.tech-icon {
+  width: 50px;
+  height: 50px;   
+}
+
+.tech-container:hover {
+  transform: scale(1.1);
+}
+
+/* .tech-icon-wrapper:focus {
+  outline: 2px solid var(--dark-primary);
+  border-radius: 4px;
+} */
+
+/* .tech-icon-contai::-moz-list-number::after {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--dark-primary);
+  color: var(--light-primary);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+} */
