@@ -78,25 +78,15 @@
   }
 
   /* L background */
-  .dark-mode .switch-slider {
-    background: var(--light-primary);
-  }
-
+  .dark-mode .switch-slider,
   /* L knob */
-  .dark-mode .switch-slider:before {
-    background-color: var(--light-primary);
-    color: var(--dark-primary);
-  }
-
+  .dark-mode .switch-slider:before,
   /* R color on Knob */
-  .dark-mode .switch-input:checked + .switch-slider:before {
-    background-color: var(--light-primary);
-    color: var(--dark-primary);
-  }
-
+  .dark-mode .switch-input:checked + .switch-slider:before,
   /* R background on knob*/
   .dark-mode .switch-input:checked + .switch-slider {
-    background: var(--light-primary);
+    background-color: var(--light-primary);
+    color: var(--dark-primary);
   }
 
   /* NAVBAR */
@@ -118,6 +108,7 @@
     display: none; /* Remove completely from flow */
   }
 
+  /* FOOTER */
   /* remove social labels from flow */
   .social-label {
     display: none;

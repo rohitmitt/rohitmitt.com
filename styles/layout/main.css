@@ -50,7 +50,9 @@ h2,
 h3,
 p,
 span,
-a {
+a,
+footer {
+  color: inherit;
 }
 
 /* Main content grows to fill space between header and footer */

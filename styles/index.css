@@ -1,7 +1,7 @@
 /* styles/index.css */
 /* Base */
-@import "base/variables.css";
-@import "base/reset.css";
+@import "variables.css";
+@import "reset.css";
 
 /* Layouts */
 @import "layout/main.css";
