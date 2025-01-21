@@ -1,35 +1,51 @@
 /* Dark mode styles */
+
+/* DESKTOP */
+
+/* PAGE STYLES */
 .dark-mode {
   transition: background-color var(--transition-standard);
   background-color: var(--dark-primary);
-}
-
-.dark-mode h1 {
   color: var(--light-secondary);
 }
-
-.dark-mode .content-wrapper {
-  color: var(--light-secondary);
+.dark-mode .page-layout,
+.dark-mode .content-wrapper,
+.dark-mode main,
+.dark-mode .dummy-content,
+.dark-mode .text-block {
+  color: inherit;
 }
 
+/* HEADER STYLES */
+body.dark-mode .headerIMG-light {
+  opacity: 0.3; /* Fade out light mode image */
+}
+body.dark-mode .headerIMG-dark {
+  opacity: 1; /* Fade in dark mode image */
+}
+
+/* FOOTER STYLES */
 .dark-mode footer {
   background-color: var(--dark-secondary);
 }
-
-.dark-mode .socials {
-  opacity: var(--opacity-light);
-}
-
-.dark-mode .social-item:hover .socials,
-.dark-mode .social-item:hover .social-label {
-  opacity: 1;
-}
-
 .dark-mode .social-label {
-  color: var(--light-primary);
+  color: var(--light-secondary);
 }
-
 body.dark-mode .github-icon {
   content: url("../../assets/github-mark-white.png");
 }
+.dark-mode .switch-slider {
+  box-shadow: var(--box-shadow-light);
+}
+.dark-mode .random-theme-button {
+  background: var(--light-primary);
+  color: var(--dark-primary);
+  box-shadow: var(--box-shadow-light);
+}
+
+/* MOBILE  */
+@media screen and (max-width: 768px) {
+  /* SWITCH STYLING */
+}
+
 /* Add more dark mode styles as needed */

@@ -1,10 +1,11 @@
 /* styles/index.css */
 /* Base */
-@import "base/variables.css";
-@import "base/reset.css";
+@import "variables.css";
+@import "reset.css";
 
 /* Layouts */
 @import "layout/main.css";
+@import "layout/tech-grid.css";
 
 /* Components */
 @import "components/navbar.css";

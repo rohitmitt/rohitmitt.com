@@ -10,6 +10,7 @@ footer {
   justify-content: center; /* Center horizontally */
   transition: transform var(--transition-standard),
     background-color var(--transition-standard);
+  color: inherit; /* Keep text color */
 }
 
 footer.hidden {
@@ -35,7 +36,6 @@ footer.hidden {
   justify-content: end;
   align-items: center;
   text-decoration: none; /* Remove underline from link */
-  color: inherit; /* Keep text color */
   cursor: pointer;
   gap: 0rem; /* Remove gap between icon and label */
 }
@@ -55,7 +55,6 @@ footer.hidden {
 
 /* Base styles with transition */
 .social-label {
-  color: var(--dark-primary);
   text-align: center;
   font-family: var(--font-primary);
   font-weight: bold;
