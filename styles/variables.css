@@ -1,6 +1,6 @@
 :root {
   /* Layout */
-  --max-width: 1250px;
+  --max-width: 1200px;
   --page-padding: 3rem;
 
   /* Typography */
@@ -20,7 +20,7 @@
 
 .theme-default {
   --light-primary: white;
-  --dark-primary:black;
+  --dark-primary: black;
   --light-secondary: #e8e8e8;
   --dark-secondary: #101010;
 }

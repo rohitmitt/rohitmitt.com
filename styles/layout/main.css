@@ -1,8 +1,8 @@
 /* styles.css */
 
 section {
-  margin-top: 100vh; 
-  padding: 2rem; 
+  margin-top: 100vh;
+  padding: 2rem;
   background-color: var(--light-secondary);
   transition: background-color var(--transition-standard);
 }
@@ -13,11 +13,10 @@ section {
   max-width: var(--max-width);
   width: 100%;
   margin: 0 auto;
-  padding: 0 var(--page-padding);
 }
 
 .content-wrapper {
-  padding: 2rem 0;
+  padding: var(--page-padding) 0;
   display: grid;
   grid-template-columns: auto 1fr; /* Main content | Navigation */
   transition: transform var(--transition-standard); /* Animate the transformation */
@@ -78,7 +77,7 @@ h2 {
 }
 
 h2.section-header {
-  margin-top: clamp(50px, 20vw - 100px, 200px);
+  margin-top: var(--page-padding);
 }
 
 h3 {
@@ -91,7 +90,7 @@ p {
   font-family: var(--font-primary);
   font-weight: normal;
   font-size: 1.3rem;
-  line-height: var(--line-height-text );
+  line-height: var(--line-height-text);
   text-align: left;
   width: 100%;
   position: relative;
