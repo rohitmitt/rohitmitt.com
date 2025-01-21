@@ -44,8 +44,7 @@ h1 {
   font-weight: bolder;
   font-size: var(--font-size-h1);
   color: var(--dark-primary);
-  line-height: var(--line-height-heading);
-  margin: 0;
+  line-height: 1;
   padding: clamp(0rem, 10vw - 5rem, 5rem) 0;
   padding-bottom: 0;
   margin-bottom: clamp(0rem, 10vw - 5rem, 0.5rem);
@@ -54,4 +53,5 @@ h1 {
   user-select: none;
   position: relative;
   z-index: 2;
+
 }

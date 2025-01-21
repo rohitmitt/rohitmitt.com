@@ -7,8 +7,10 @@
   --font-primary: "Source Sans 3", system-ui, sans-serif;
   --font-size-h1: clamp(1.5rem, 8vw - 1rem, 6rem);
   --font-size-h2: clamp(1.5rem, 6vw - 1rem, 3rem);
+  --font-size-h3: clamp(1rem, 2vw - 1rem, 2rem);
   --line-height-normal: 1.5;
   --line-height-heading: 1.2;
+  --line-height-text: 1.6;
 
   /* VISUAL */
   --transition-standard: 0.7s ease-out;

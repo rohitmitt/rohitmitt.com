@@ -10,7 +10,7 @@
 .content-wrapper {
   padding: 2rem 0;
   display: grid;
-  grid-template-columns: 1fr auto; /* Main content | Navigation */
+  grid-template-columns: auto 1fr; /* Main content | Navigation */
   transition: transform var(--transition-standard); /* Animate the transformation */
   gap: 4rem; /* Space between content and navigation */
   color: var(--dark-primary);
@@ -42,17 +42,6 @@ body {
   transition: background-color var(--transition-standard);
 }
 
-body {
-}
-
-h1,
-h2,
-h3,
-p,
-span,
-a {
-}
-
 /* Main content grows to fill space between header and footer */
 h2 {
   font-family: var(--font-primary);
@@ -63,7 +52,16 @@ h2 {
   width: 100%;
   user-select: none;
   position: relative;
-  margin: 0;
+}
+
+p {
+  font-family: var(--font-primary);
+  font-weight: bolder;
+  font-size: 1rem;
+  line-height: var(--line-height-text );
+  text-align: left;
+  width: 100%;
+  position: relative;
 }
 
 main {
@@ -72,7 +70,11 @@ main {
   z-index: 1; /* Place behind navbar */
   margin-top: 0; /* Remove negative margin */
 }
-
+.text-block {
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: left;
+}
 .dummy-content {
   min-height: 200vh; /* 2x viewport height to force scroll */
 }

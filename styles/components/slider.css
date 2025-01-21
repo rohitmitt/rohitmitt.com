@@ -121,23 +121,42 @@
   justify-content: center;
 }
 
-.theme-slider {
-  background-image: url("../../assets/night-icon-light.svg");
-  background-size: 16px;
-  background-repeat: no-repeat;
-  background-position: 80% center;
-}
-
-.switch-input:checked + .theme-slider {
-  background-image: url("../../assets/day-icon-dark.svg");
-  background-size: 16px;
-  background-repeat: no-repeat;
-  background-position: 20% center;
-}
-
 .theme-icon {
-  display: none;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity var(--transition-standard);
 }
+
+.moon-icon {
+  right: 20%;
+  opacity: 0;
+}
+
+.sun-icon {
+  left: 20%;
+  opacity: 1;
+}
+
+.icon-path {
+  fill: var(--dark-primary);
+  transition: fill var(--transition-standard);
+}
+
+.dark-mode .icon-path {
+  fill: var(--light-primary);
+}
+
+.dark-mode .moon-icon {
+  opacity: 1;
+}
+
+.dark-mode .sun-icon {
+  opacity: 0;
+}
+
 
 .switch-group {
   display: flex;
