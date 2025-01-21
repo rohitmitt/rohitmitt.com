@@ -225,10 +225,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // Format: ["name", .... adjectives, ... "name"]
   const words = [
     "Rohit!",
-    "developer",
-    "composer",
-    "designer",
-    "student",
+    "Coder.",
+    "Designer.",
+    "Data-Nerd.",
+    "Student.",
     "Rohit. :) ",
   ];
 

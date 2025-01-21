@@ -1,10 +1,17 @@
 /* MOBILE SETTINGS */
 
-* {
-  -webkit-tap-highlight-color: transparent;
-}
+
 
 @media screen and (max-width: 768px) {
+  /* Global Overrides */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  * {
+    opacity: 1 !important;
+  }
+
   /* LAYOUT */
   :root {
     --max-width: 100%;
@@ -16,15 +23,17 @@
     gap: 2rem;
   }
 
+  .tech-grid {
+    grid-template-columns: repeat(3, clamp(25px, 15vw, 100px));
+  }
+
+
   h1 {
     margin-bottom: 0rem;
   }
 
-  * {
-    opacity: 1 !important;
-  }
 
-  /* SLIDER */
+  /* SLIDERS */
   :root {
     --footer-width: 30px;
     --box-shadow-light: 0;
@@ -33,47 +42,70 @@
   }
 
   .theme-slider:before {
-    background-image: url("../../assets/day-icon-dark.svg");
-    background-size: 16px;
-    background-repeat: no-repeat;
-    background-position: center;
+    display: none
   }
 
-  .switch-input:checked + .theme-slider:before {
-    background-image: url("../../assets/night-icon-light.svg");
-    background-size: 16px;
-    background-repeat: no-repeat;
-    background-color: var(--dark-primary);
+  .theme-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .moon-icon {
+    visibility: visible;
+  }
+
+  .sun-icon {
+    visibility: hidden;
+  }
+
+  .dark-mode .moon-icon {
+    visibility: hidden;
+    opacity: 1;
+  }
+
+  .dark-mode .sun-icon {
+    visibility: visible;
+  }
+  
+  .icon-path {
+    fill: var(--light-primary);
+    transition: all 0s;
+  }
+
+  .dark-mode .icon-path {
+    fill: var(--dark-primary);
+    transition: all 0s;
   }
 
   .random-theme-button::after {
     padding: 0;
-    content: "Theme"; /* Mobile text */
   }
 
-  /* L background */
+  /* L OUTLINE - LIGHT MODE */
   .switch-slider {
     background: var(--dark-primary);
     transition: transform 0s, color 0s;
   }
 
-  /* L knob */
+  /* L BG + TEXT - LIGHT MODE */
   .switch-slider:before {
     background-color: var(--dark-primary);
     color: var(--light-primary);
     transition: transform 0s, color 0s;
   }
 
-  /* R color on Knob */
-  .switch-input:checked + .switch-slider:before {
-    background-color: var(--dark-primary);
-    color: var(--light-primary);
+  /* R OUTLINE - LIGHT MODE*/
+  .switch-input:checked + .switch-slider {
+    background: var(--dark-primary);
     transition: transform 0s, color 0s;
   }
 
-  /* R background on knob*/
-  .switch-input:checked + .switch-slider {
-    background: var(--dark-primary);
+  /* R BG + TEXT - LIGHT MODE*/
+  .switch-input:checked + .switch-slider:before {
+    background-color: var(--dark-primary);
+    color: var(--light-primary);
     transition: transform 0s, color 0s;
   }
 

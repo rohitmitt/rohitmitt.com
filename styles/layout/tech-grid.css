@@ -1,0 +1,59 @@
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(4, clamp(25px, 15vw, 100px));
+    gap: 2rem;
+    margin: 2rem auto;
+    place-items: center;
+    justify-content: center;
+  }
+  
+.tech-icon-wrapper {
+    cursor: pointer;
+    position: relative;
+    border: none;
+    background: none;
+    padding: 0;
+    width: fit-content;
+    transition: transform var(--transition-standard);
+  }
+
+  .tech-icon-container {
+    display: grid;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  
+  .tech-label {
+    font-size: 0.8rem;
+    color: var(--dark-primary);
+    font-weight: 500;
+  }
+  
+
+  .tech-icon {
+    width: 50px;
+    height: 50px;   
+  }
+  
+  .tech-icon-wrapper:hover {
+    transform: scale(1.1);
+  }
+  
+  .tech-icon-wrapper:focus {
+    outline: 2px solid var(--dark-primary);
+    border-radius: 4px;
+  }
+  
+  .tech-icon-wrapper:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--dark-primary);
+    color: var(--light-primary);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
