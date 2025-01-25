@@ -1,41 +1,38 @@
-.project-grid {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: center;
-  gap: 1rem;
-  /* grid-row-gap: 0; */
+.tech-grid-container {
   margin: 1rem 0;
-  padding: 2rem;
+  padding: 1rem;
+  width: var(--card-width);
   background-color: var(--light-secondary);
   transition: background-color var(--transition-standard);
 }
 
 .project-category {
-  display: flex;
-  padding: 0.5rem 1rem;
+  max-width: fit-content;
 }
 
-.tech-stack {
-  display: flex; /* Change to flex for horizontal row */
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: clamp(10px, 4vw - 1rem, 1rem);
+.tech-stack-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 90px) repeat(auto-fill, minmax(80px, 1fr));
   align-items: center;
-  width: fit-content;
+  column-gap: 2rem; /* Adjust horizontal spacing between columns */
+  row-gap: 2rem; /* Adjust vertical spacing between rows */
 }
 
 .tech-container {
   display: flex;
-  align-items: center;
-  white-space: nowrap; /* Prevent label wrapping */
+  flex-direction: row;
+  align-items: center; /* Center icon and label vertically */
+  justify-content: start; /* Align to the start of the container */
   color: inherit;
+  
   cursor: pointer;
   position: relative;
   border: none;
   background: none;
-  padding: 0;
-  width: fit-content;
   transition: transform var(--transition-quick);
+  
+  padding: 0.5rem; /* Keep padding minimal */
+  gap: 0.5rem; /* Ensure reasonable spacing between icon and label */
 }
 
 .tech-label {
@@ -43,12 +40,12 @@
   font-size: var(--footer-text-size);
   font-weight: bold;
   color: var(--dark-primary);
-  padding-left: 5px;
 }
 
 .tech-icon {
-  width: 50px;
-  height: 50px;
+  flex-shrink: 0; /* Prevent icon shrinking */
+  width: 32px;
+  height: 32px;
 }
 
 .tech-container:hover {

@@ -1,13 +1,15 @@
 :root {
   /* Layout */
-  --max-width: 1200px;
+  --max-width: 1300px;
   --page-padding: 3rem;
+  --card-width: 80%;
 
   /* Typography */
   --font-primary: "Source Sans 3", system-ui, sans-serif;
   --font-size-h1: clamp(1.5rem, 8vw - 1rem, 6rem);
   --font-size-h2: clamp(1.5rem, 6vw - 1rem, 3rem);
-  --font-size-h3: clamp(1rem, 6vw - 1rem, 1.5rem);
+  --font-size-h3: clamp(1rem, 3vw - 1rem, 1.5rem);
+  --footer-text-size: 14px;
   --line-height-normal: 1.5;
   --line-height-heading: 1.2;
   --line-height-text: 1.6;
@@ -16,6 +18,14 @@
   --transition-standard: 0.7s ease-out;
   --transition-quick: 0.2s ease;
   --opacity-light: 0.8;
+
+  --footer-width: 60px;
+  --footer-height: 30px;
+  --footer-border-radius: 15px;
+  --footer-knob-size: 24px;
+  --footer-knob-margin: 3px;
+  --box-shadow-light: -5px -3px 10px rgba(255, 255, 255, 0.6);
+  --box-shadow-dark: 7px 5px 1px rgba(0, 0, 0, 0.3);
 }
 
 .theme-default {

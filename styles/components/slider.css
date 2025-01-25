@@ -1,14 +1,3 @@
-:root {
-  --footer-width: 60px;
-  --footer-height: 30px;
-  --footer-border-radius: 15px;
-  --footer-knob-size: 24px;
-  --footer-knob-margin: 3px;
-  --footer-text-size: 14px;
-  --box-shadow-light: -5px -3px 10px rgba(255, 255, 255, 0.6);
-  --box-shadow-dark: 7px 5px 1px rgba(0, 0, 0, 0.3);
-}
-
 .switch-container {
   font-family: var(--font-primary);
   font-weight: bold;

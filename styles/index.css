@@ -6,6 +6,7 @@
 /* Layouts */
 @import "layout/main.css";
 @import "layout/tech-grid.css";
+@import "layout/typography.css";
 
 /* Components */
 @import "components/navbar.css";

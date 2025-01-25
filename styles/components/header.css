@@ -1,5 +1,7 @@
 .header-container {
   position: relative;
+  padding: 0 var(--page-padding);
+
   height: clamp(50px, 20vw - 100px, 200px);
   display: flex;
   align-items: center;
@@ -17,6 +19,8 @@
   object-fit: cover;
   object-position: center;
   z-index: 1;
+  user-select: none;
+  pointer-events: none;
   transition: opacity var(--transition-standard); /* Add opacity transition */
 }
 
@@ -30,18 +34,3 @@
   opacity: 0.3;
 }
 
-h1 {
-  font-family: var(--font-primary);
-  font-weight: bolder;
-  font-size: var(--font-size-h1);
-  line-height: 1;
-  padding: clamp(0rem, 10vw - 5rem, 5rem) 0;
-  padding-bottom: 0;
-  margin-bottom: clamp(0rem, 10vw - 5rem, 0.5rem);
-  text-align: left;
-  width: 100%;
-  user-select: none;
-  position: relative;
-  z-index: 2;
-
-}

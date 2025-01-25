@@ -18,12 +18,15 @@
     --page-padding: 2rem;
   }
   .content-wrapper {
-    padding: 1.5rem 0;
+    padding: 1.5rem;
     gap: 2rem;
   }
-  .tech-grid {
-    grid-template-columns: repeat(3, clamp(25px, 15vw, 100px));
+
+  /* HIDE TECH STACK GRID FOR NOW */
+  .tech-grid-container {
+    display: none;
   }
+
   h1 {
     margin-bottom: 0rem;
   }

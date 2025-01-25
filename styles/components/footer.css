@@ -62,6 +62,7 @@ footer.hidden {
   font-family: var(--font-primary);
   font-weight: bold;
   font-size: var(--footer-text-size);
+  color: var(--dark-primary);
   padding-left: 5px;
 }
 .social-img,

@@ -1,14 +1,5 @@
 /* styles.css */
 
-section {
-  margin-top: 100vh;
-  padding: 2rem;
-  background-color: var(--light-secondary);
-  transition: background-color var(--transition-standard);
-}
-.dark-mode section {
-  background-color: var(--dark-secondary);
-}
 .page-layout {
   max-width: var(--max-width);
   width: 100%;
@@ -16,7 +7,7 @@ section {
 }
 
 .content-wrapper {
-  padding: var(--page-padding) 0;
+  padding: var(--page-padding);
   display: grid;
   grid-template-columns: auto 1fr; /* Main content | Navigation */
   transition: transform var(--transition-standard); /* Animate the transformation */
@@ -51,51 +42,6 @@ body {
   transition: background-color var(--transition-standard);
 }
 
-h1,
-h2,
-h3,
-p,
-span,
-a,
-footer {
-  color: inherit;
-  font-family: var(--font-primary);
-  text-decoration: none;
-}
-
-/* Main content grows to fill space between header and footer */
-h2 {
-  font-family: var(--font-primary);
-  font-weight: bolder;
-  font-size: var(--font-size-h2);
-  line-height: 1;
-  text-align: left;
-  width: 100%;
-  user-select: none;
-  position: relative;
-  margin-bottom: 1rem;
-}
-
-h2.section-header {
-  margin-top: var(--page-padding);
-}
-
-h3 {
-  font-family: var(--font-primary);
-  font-weight: bolder;
-  font-size: var(--font-size-h3);
-}
-
-p {
-  font-family: var(--font-primary);
-  font-weight: normal;
-  font-size: 1.3rem;
-  line-height: var(--line-height-text);
-  text-align: left;
-  width: 100%;
-  position: relative;
-}
-
 main {
   flex: 1; /* Take up all available space */
   position: relative; /* Create stacking context */
@@ -108,6 +54,22 @@ main {
   margin: 0 auto;
   text-align: left;
 }
+
 .dummy-content {
   min-height: 200vh; /* 2x viewport height to force scroll */
 }
+
+section {
+  top: 0;
+  padding: 0;
+
+}
+
+.project-card {
+  margin: var(--page-padding) 0;
+  padding: 2rem;
+  width: var(--card-width);
+  background-color: var(--light-secondary);
+  transition: background-color var(--transition-standard);
+}
+

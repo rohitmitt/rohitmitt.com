@@ -14,13 +14,14 @@
 .dark-mode main,
 .dark-mode .dummy-content,
 .dark-mode .text-block,
-.dark-mode .tech-label {
+.dark-mode .tech-label,
+.dark-mode .social-label,
+.dark-mode h1 {
   color: inherit;
 }
 
-
-
-.dark-mode .project-grid {
+.dark-mode .tech-grid-container,
+.dark-mode .project-card {
   background-color: var(--dark-secondary);
 }
 
